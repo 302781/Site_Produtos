@@ -173,6 +173,14 @@ document.addEventListener('DOMContentLoaded', () => {
             shopeeLink: 'https://s.shopee.com.br/gFQ2x8gLQ', 
             Id:'CCJ-RBH-YVF',
         },
+         {
+            name: 'Bule de Cha',
+            descriçao:'Dê uma olhada em Em Estoque Chaleira Elétrica Retro Italiana Padrão Europeu SMEG para Preparação de Chá com 7 Configurações de Temperatur.',
+           price: 'R$ 1.696,00',
+            image: './img/Shoppe/Bule de Cha.jpeg',
+            shopeeLink: 'https://s.shopee.com.br/6KtmnHbvis', 
+            Id:'BLT-PZG-EAE',
+        },
         {
             name: 'Chaveiro Personalizado',
             descriçao: 'Dê uma olhada em Defesa Pessoal Chaveiro Feminino De Segurança Autodefesa Chaveiro Kit Alarme De Autodefesa Para Mulheres Menina Idosa.',
@@ -298,9 +306,17 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 'R$ 19,99 - R$ 56,99',
             image: './img/Shoppe/Depilador.png', 
             shopeeLink: 'https://s.shopee.com.br/9KXOOaKRZ9',
-            Id: 'ABY-ZGW-VDZ', 
+            Id: 'ABY-ZGW-VDZ',
         },
-        ////////////////////////////////////////////////////////////
+        {
+            name: 'Depilador a Laser Portatil',
+            descriçao:'Dê uma olhada em Depilador A Laser 900 Mil Pulsos Portátil.',
+            price: 'R$ 199,99',
+            image: './img/Shoppe/Desumidificador.png', 
+            shopeeLink: 'https://s.shopee.com.br/5pxWEDaYGq',
+            Id:'BUW-VYG-PYJ', 
+        },
+        /////////////////////////////////////////////////////////
         {
             name: 'Desumidificador de Ar',
             price: 'R$',
