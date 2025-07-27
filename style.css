@@ -1,0 +1,246 @@
+/* Estilo geral do corpo para remoção de margens e definição de fonte/cor */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Um cinza claro para o fundo */
+    color: #333; /* Cor de texto padrão */
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #ff5722; /* Cor laranja da Shopee */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0; /* Remove margem padrão do h1 */
+}
+
+/* Estilo da barra de navegação */
+nav {
+    background-color: #555; /* Um cinza escuro para o nav */
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none; /* Remove marcadores da lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para alinhar os itens na horizontal */
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #777;
+    border-radius: 4px;
+}
+
+/* Estilo do formulário de pesquisa */
+form {
+    text-align: center;
+    padding: 20px;
+    background-color: #e0e0e0; /* Um cinza um pouco mais escuro */
+    border-bottom: 1px solid #ccc;
+}
+
+form input[type="search"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px; /* Largura do campo de pesquisa */
+}
+
+form button {
+    padding: 8px 15px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #e04a1f;
+}
+
+
+/* Estilo para a seção de perfil/bio (linktree-user-profile) */
+.linktree-user-profile {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 600px; /* Limita a largura do bloco de perfil */
+}
+
+.linktree-user-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Imagem redonda */
+    object-fit: cover;
+    border: 3px solid #ff5722; /* Borda laranja */
+    margin-bottom: 10px;
+}
+
+.linktree-user-name h2 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.linktree-user-bio p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: justify; /* Justifica o texto */
+    padding: 0 15px;
+}
+
+.toggle-text-btn {
+    color: #ff5722;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Título da lista de produtos */
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+}
+
+/* --- SEÇÃO DOS PRODUTOS --- */
+
+/* Contêiner principal da lista de produtos (substitui .galeria) */
+#product-list {
+    display: grid;
+    /* Colunas responsivas: mínimo de 150px, expandindo para 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px; /* Espaçamento entre os cards */
+    padding: 20px;
+    max-width: 1200px; /* Largura máxima do contêiner */
+    margin: 20px auto; /* Centraliza o contêiner */
+}
+
+/* Estilo individual de cada card de produto (gerado pelo JS) */
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave */
+    padding: 15px;
+    text-align: center;
+    display: flex; /* Usa flexbox para organizar o conteúdo interno */
+    flex-direction: column; /* Organiza itens em coluna */
+    justify-content: space-between; /* Espaça conteúdo (útil para o botão ir para o final) */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transição suave */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" ao passar o mouse */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra mais forte */
+}
+
+.product-card img {
+    width: 100%; /* A imagem preenche a largura do card */
+    max-height: 180px; /* Altura máxima para imagens */
+    object-fit: contain; /* Garante que a imagem caiba sem distorcer */
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 1.1em;
+    margin: 10px 0;
+    min-height: 3.2em; /* Garante altura mínima para títulos de diferentes tamanhos */
+    overflow: hidden; /* Esconde texto que excede a altura */
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+    display: -webkit-box; /* Para que text-overflow: ellipsis funcione em múltiplas linhas */
+    -webkit-line-clamp: 2; /* Limita a 2 linhas */
+    -webkit-box-orient: vertical;
+}
+
+.product-card .price {
+    font-size: 1.4em;
+    color: #ff5722; /* Cor da Shopee */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-card .buy-button {
+    background-color: #ff5722; /* Cor da Shopee */
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Empurra o botão para a parte inferior do card */
+}
+
+.product-card .buy-button:hover {
+    background-color: #e04a1f; /* Laranja mais escuro ao passar o mouse */
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+/* Media Queries para Responsividade Adicional */
+@media (max-width: 768px) {
+    #product-list {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Aumenta um pouco em telas médias */
+    }
+
+    .linktree-user-profile {
+        margin: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #product-list {
+        grid-template-columns: 1fr; /* Uma única coluna em celulares */
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    form input[type="search"] {
+        width: calc(100% - 120px); /* Ajusta largura para telas pequenas */
+        margin-right: 5px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Itens do nav em coluna em telas pequenas */
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
