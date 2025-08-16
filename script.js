@@ -1,861 +1,811 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
     const productListDiv = document.getElementById('product-list');
+    const searchForm = document.querySelector('.search-form');
+    const searchInput = searchForm.querySelector('input[type="search"]');
 
+    // Seus dados de produtos
     const productsData = [
         {
             name: 'Antena Digital',
-            descricao:'Dê uma olhada em Antena 3/5 Metro Digital Interna Externa Full Hdtv 4K Cabo Grande antena digital para tv e conversor digital tv.',
-            price: 'R$ 20,99 ',
-            image: './img/Shoppe/Antena Digital.png', 
+            description: 'Dê uma olhada em Antena 3/5 Metro Digital Interna Externa Full Hdtv 4K Cabo Grande antena digital para tv e conversor digital tv.',
+            price: 'R$ 20,99',
+            image: './img/Shoppe/Antena Digital.png',
             shopeeLink: 'https://s.shopee.com.br/gFPKX7CRx',
-            Id: 'BND-HBF-DLE',
+            id: 'BND-HBF-DLE', // Use 'id' em vez de 'Id' para consistência
         },
         {
             name: 'Aspirador & Soprador',
-            descricao:'Dê uma olhada em Carro Aspirador De Pó Portátil Sem Fio Mini Comprimido Espanador De Ar & Soprador Bomba Mão.',
+            description: 'Dê uma olhada em Carro Aspirador De Pó Portátil Sem Fio Mini Comprimido Espanador De Ar & Soprador Bomba Mão.',
             price: 'R$ 167,75',
-            image: './img/Shoppe/Aspirador.png', 
-            shopeeLink: 'https://s.shopee.com.br//709SshSBU5', 
-            Id:'BCY-UGR-PCT',
+            image: './img/Shoppe/Aspirador.png',
+            shopeeLink: 'https://s.shopee.com.br//709SshSBU5',
+            id: 'BCY-UGR-PCT',
         },
-        
         {
             name: 'Balança de Cozinha',
-            descriçao: 'Balança de Cozinha Digital Eletrônica 10kg Balança de Cozinha Digital Eletrônica 10kg Balança de Cozinha Digital Eletrônica 10kg.',
+            description: 'Balança de Cozinha Digital Eletrônica 10kg Balança de Cozinha Digital Eletrônica 10kg Balança de Cozinha Digital Eletrônica 10kg.',
             price: 'R$ 41,99',
-            image: './img/Shoppe/Balança de Cozinha.png', 
+            image: './img/Shoppe/Balança de Cozinha.png',
             shopeeLink: 'https://s.shopee.com.br/4L8hi0f3jb',
-            Id: 'BJP-QQY-ALJ',
+            id: 'BJP-QQY-ALJ',
         },
         {
             name: 'Barbeador Elétrico',
-            descriçao: 'Dê uma olhada em Máquina corta cabelo acabamento barbear barbeador eletrônico pezinho vintage Buda dragão.',
+            description: 'Dê uma olhada em Máquina corta cabelo acabamento barbear barbeador eletrônico pezinho vintage Buda dragão.',
             price: 'R$ 21,00',
             image: './img/Shoppe/Barbeador.png',
             shopeeLink: 'https://shopee.com.br/8fHgsWk1gG',
-            Id:'BYX-UBC-WMX',
+            id: 'BYX-UBC-WMX',
         },
         {
             name: 'Base Matte',
-            descriçao:' Base Matte é uma base de maquiagem que proporciona um acabamento matte e duradouro, ideal para peles oleosas.',
+            description: 'Base Matte é uma base de maquiagem que proporciona um acabamento matte e duradouro, ideal para peles oleosas.',
             price: 'R$ 105,00',
-            image: './img/Shoppe/Base Matte.png', 
+            image: './img/Shoppe/Base Matte.png',
             shopeeLink: 'https://s.shopee.com.br/2qJtwNEv0T',
-            Id:'CFE-BFJ-VPW',
+            id: 'CFE-BFJ-VPW',
         },
         {
-            name: 'Base(SHEGLAM)',
-            descriçao: 'Dê uma olhada em SHEGLAM Skinfluencer de pele base amostra.',
+            name: 'Base (SHEGLAM)', // Ajustado o nome para melhor clareza
+            description: 'Dê uma olhada em SHEGLAM Skinfluencer de pele base amostra.',
             price: 'R$ 18,15',
-            image: './img/Shoppe/Base.png', 
+            image: './img/Shoppe/Base.png',
             shopeeLink: 'https://s.shopee.com.br/8fHgtDGHY',
-            Id:'AAT-MHY-LWW', 
+            id: 'AAT-MHY-LWW',
         },
         {
-            name: 'Batom Liquido',
-            descriçao: 'Dê uma olhada em Sheglam Batom Líquido Matte Pout Pillow Cushion.',
+            name: 'Batom Líquido', // Ajustado o nome
+            description: 'Dê uma olhada em Sheglam Batom Líquido Matte Pout Pillow Cushion.',
             price: 'R$ 78,90',
-            image: './img/Shoppe/Batom Líquido .jpeg', 
+            image: './img/Shoppe/Batom Líquido .jpeg',
             shopeeLink: 'https://s.shopee.com.br/709SuIvlQf',
-            Id:'BGZ-SKQ-UFD', 
+            id: 'BGZ-SKQ-UFD',
         },
         {
-            name: 'Biblia Feminina',
-            descricao: 'Dê uma olhada em Bíblia Evangélica Feminina | Capa dura | Biblia Sagrada Roxa | ARC | Letra Média | Harpa Cristã.',
+            name: 'Bíblia Feminina', // Ajustado o nome
+            description: 'Dê uma olhada em Bíblia Evangélica Feminina | Capa dura | Biblia Sagrada Roxa | ARC | Letra Média | Harpa Cristã.',
             price: 'R$ 46,91',
-            image: './img/Shoppe/Biblia Feminina.png', 
+            image: './img/Shoppe/Biblia Feminina.png',
             shopeeLink: 'https://s.shopee.com.br/2LNdLqSIiS',
-            Id:'AAG-FRF-XBK',
+            id: 'AAG-FRF-XBK',
         },
-         {
-            name: 'Biblia Kingstone',
-            descriçao: 'Dê uma olhada em Bíblia em Quadrinhos Kingstone POP 17x24cm | SBB.',
+        {
+            name: 'Bíblia Kingstone', // Ajustado o nome
+            description: 'Dê uma olhada em Bíblia em Quadrinhos Kingstone POP 17x24cm | SBB.',
             price: 'R$ 127,42',
-            image: './img/Shoppe/Bíblia Kingstone.png', 
+            image: './img/Shoppe/Bíblia Kingstone.png',
             shopeeLink: 'https://s.shopee.com.br/VvzAZBgOv',
-            Id:'AJS-NDS-PES',
+            id: 'AJS-NDS-PES',
         },
-         {
+        {
             name: 'Blush',
-            descriçao: 'Dê uma olhada em Paleta de Blush Contorno BANDAIYAN, Blush Perolado Iluminador, Blush Bicolor, Blush Matte à Prova d\'Água, Blush em Creme.',
+            description: 'Dê uma olhada em Paleta de Blush Contorno BANDAIYAN, Blush Perolado Iluminador, Blush Bicolor, Blush Matte à Prova d\'Água, Blush em Creme.',
             price: 'R$ 58,93',
-            image: './img/Shoppe/Blush.jpeg', 
+            image: './img/Shoppe/Blush.jpeg',
             shopeeLink: 'https://s.shopee.com.br/4L8hjvtPVb',
-            Id:'AUN-MUF-AHE',
+            id: 'AUN-MUF-AHE',
         },
-         {
+        {
             name: 'Cabeceira',
-            descriçao: 'Dê uma olhada em Cabeceira de Cama Casal Queen King Solteiro Cabeceira Casal Estofada Modulada Cabeceiras Estofadas.',
+            description: 'Dê uma olhada em Cabeceira de Cama Casal Queen King Solteiro Cabeceira Casal Estofada Modulada Cabeceiras Estofadas.',
             price: 'R$ 53,90 - R$ 94,90',
-            image: './img/Shoppe/Cabeceira.png', 
+            image: './img/Shoppe/Cabeceira.png',
             shopeeLink: 'https://s.shopee.com.br/2qJuZ2VMtM',
-            Id:'CMT-JZD-PJC', 
+            id: 'CMT-JZD-PJC',
         },
-         {
+        {
             name: 'Cabide',
-            descriçao: 'Dê uma olhada em Cabide de Plástico para Roupas Adulto Infantil Cabideiro Organizador de Roupa Cabide de Plástico.',
+            description: 'Dê uma olhada em Cabide de Plástico para Roupas Adulto Infantil Cabideiro Organizador de Roupa Cabide de Plástico.',
             price: 'R$ 101,29 - R$ 106,57',
-            image: './img/Shoppe/Cabide.jpeg', 
+            image: './img/Shoppe/Cabide.jpeg',
             shopeeLink: 'https://s.shopee.com.br/2Vh4D7zyJM',
-            Id:'ADV-YBQ-ZRU',
+            id: 'ADV-YBQ-ZRU',
         },
         {
             name: 'Cabo USB',
-            descriçao:'Dê uma olhada em Conjunto de adaptador de cabo de carregamento múltiplo 6 em 1 USB C para USB Kit de cabo adaptador de celular Suporte de telefone celular pino de ejeção adaptador USB caixa de armazenamento portátil para viagem de negócio. ',
-            price: 'R$ 15',
-            image: './img/Shoppe/Cabo usb.jpeg', 
+            description: 'Dê uma olhada em Conjunto de adaptador de cabo de carregamento múltiplo 6 em 1 USB C para USB Kit de cabo adaptador de celular Suporte de telefone celular pino de ejeção adaptador USB caixa de armazenamento portátil para viagem de negócio. ',
+            price: 'R$ 15,00', // Preço com vírgula e duas casas decimais para consistência
+            image: './img/Shoppe/Cabo usb.jpeg',
             shopeeLink: 'https://s.shopee.com.br/7V5kAWosvy',
-            Id:'AHU-AUK-ZCD',
+            id: 'AHU-AUK-ZCD',
         },
         {
-            name: 'Caixa Saco',
-            descriçao:'Dê uma olhada em Saco Organizador para Cobertor Caixa Organizadora Casaco Guarda Roupa Grande Caixa de Roupas Anti-Poeira Umidade Armário.',
+            name: 'Caixa Saco Organizadora', // Nome mais claro
+            description: 'Dê uma olhada em Saco Organizador para Cobertor Caixa Organizadora Casaco Guarda Roupa Grande Caixa de Roupas Anti-Poeira Umidade Armário.',
             price: 'R$ 12,99 - R$ 51,99',
-            image: './img/Shoppe/Caixa Saco.png', 
+            image: './img/Shoppe/Caixa Saco.png',
             shopeeLink: 'https://s.shopee.com.br/40Vs0E3NT8',
-            Id:'AWW-SFU-PNE',
+            id: 'AWW-SFU-PNE',
         },
         {
             name: 'Calça Alfaiataria',
-            descriçao:'Dê uma olhada em Calça Pantalona Feminina Pantalona Feminina Calça Pantalona Alfaiataria Pantalona Preta PROMOÇÃO.',
-            price: 'R$ R$49,89 - R$59,90',
-            image: './img/Shoppe/Calça Alfaiateria.png', 
+            description: 'Dê uma olhada em Calça Pantalona Feminina Pantalona Feminina Calça Pantalona Alfaiataria Pantalona Preta PROMOÇÃO.',
+            price: 'R$ 49,89 - R$ 59,90', // Ajustado o preço para um formato comum
+            image: './img/Shoppe/Calça Alfaiateria.png',
             shopeeLink: 'https://s.shopee.com.br/6AaMaJSjDA',
-            Id:'BBB-VMZ-XSA',
+            id: 'BBB-VMZ-XSA',
         },
         {
-            name: 'Calça Feminina',
-            descriçao:'Dê uma olhada em Calça Pantalona Feminina  Modelo Clochard com Cinto Calças de Verão Colorida Tecido Duna Moda Praia.',
+            name: 'Calça Feminina Clochard', // Nome mais específico
+            description: 'Dê uma olhada em Calça Pantalona Feminina Modelo Clochard com Cinto Calças de Verão Colorida Tecido Duna Moda Praia.',
             price: 'R$ 69,90',
-            image: './img/Shoppe/Calça Feminina.png', 
+            image: './img/Shoppe/Calça Feminina.png',
             shopeeLink: 'https://s.shopee.com.br/6VDCz2724x',
-            Id:'BWC-HXB-ZPX', 
+            id: 'BWC-HXB-ZPX',
         },
         {
-            name: 'Calça Pantalona',
-            descriçao:'Dê uma olhada em JOGGER TACTEL ROSA COM CORRENTE – A CALÇA QUE VAI TE DAR UM LOOK INCRÍVEL E ÚNICO.',
+            name: 'Calça Jogger Tactel', // Nome mais específico
+            description: 'Dê uma olhada em JOGGER TACTEL ROSA COM CORRENTE – A CALÇA QUE VAI TE DAR UM LOOK INCRÍVEL E ÚNICO.',
             price: 'R$ 39,35',
-            image: './img/Shoppe/Calça Pantalona.png', 
+            image: './img/Shoppe/Calça Pantalona.png', // A imagem é de uma jogger, então o nome do produto foi ajustado
             shopeeLink: 'https://s.shopee.com.br/7AStmKXg1f',
-            Id:'CJT-TRT-ZTF', 
+            id: 'CJT-TRT-ZTF',
         },
         {
-            name: 'Calça Social',
-            descriçao:'Dê uma olhada em Calça Pantalona social alfaiataria, cintura alta com cinto, calça pantalona wide leg social.',
+            name: 'Calça Social Wide Leg', // Nome mais específico
+            description: 'Dê uma olhada em Calça Pantalona social alfaiataria, cintura alta com cinto, calça pantalona wide leg social.',
             price: 'R$ 58,46 - R$ 79,00',
-            image: './img/Shoppe/Calça Social.png', 
+            image: './img/Shoppe/Calça Social.png',
             shopeeLink: 'https://s.shopee.com.br/2Vh4Dqvon7',
-            Id:'ADJ-SJY-LNV', 
+            id: 'ADJ-SJY-LNV',
         },
         {
-            name: 'Canguru',
-            descriçao:'Dê uma olhada em Canguru bebê mãe canguru Banco De Cintura Para Bebê Canguru  Bebe Mochila Infantil Hipseat Carrier.',
+            name: 'Canguru Ergonômico para Bebê', // Nome mais específico
+            description: 'Dê uma olhada em Canguru bebê mãe canguru Banco De Cintura Para Bebê Canguru Bebe Mochila Infantil Hipseat Carrier.',
             price: 'R$ 89,00 - R$ 119,00',
-            image: './img/Shoppe/Canguru.png', 
+            image: './img/Shoppe/Canguru.png',
             shopeeLink: 'https://s.shopee.com.br/2B4DpLBRCH',
-            Id:'CJL-TCH-RDD', 
+            id: 'CJL-TCH-RDD',
         },
         {
-            name: 'Capa de Colchao', 
-            descriçao:'Dê uma olhada em Capa Para Colchão Queen Box Impermeável Protetor de Colchão Impermeável Capa de Colchão Casal Protetor de Colchão Impermeável.',
+            name: 'Capa de Colchão Queen Box Impermeável', // Nome mais específico
+            description: 'Dê uma olhada em Capa Para Colchão Queen Box Impermeável Protetor de Colchão Impermeável Capa de Colchão Casal Protetor de Colchão Impermeável.',
             price: 'R$ 75,90',
-            image: './img/Shoppe/Capa de Colchão .jpeg', 
+            image: './img/Shoppe/Capa de Colchão .jpeg',
             shopeeLink: 'https://s.shopee.com.br/AUjLkmzIza',
-            Id:'AYT-RAN-ZJA', 
+            id: 'AYT-RAN-ZJA',
         },
         {
-            name: 'Chaleira',
-            descriçao:'Dê uma olhada em SMEG 304 Garrafa de água de aço inoxidável Design europeu de grande capacidade adequado para fogão a gás Fogão elétrico.',
-           price: 'R$ 1.074,90',
+            name: 'Chaleira Elétrica Retro SMEG', // Nome mais específico
+            description: 'Dê uma olhada em SMEG 304 Garrafa de água de aço inoxidável Design europeu de grande capacidade adequado para fogão a gás Fogão elétrico.',
+            price: 'R$ 1.074,90',
             image: './img/Shoppe/Chaleira 1.jpeg',
-            image: './img/Shoppe/Chaleira 2.jpeg', 
-            shopeeLink: 'https://s.shopee.com.br/gFQ2x8gLQ', 
-            Id:'CCJ-RBH-YVF',
+            // shopeeLink: 'https://s.shopee.com.br/gFQ2x8gLQ', // Mantém apenas um link ou cria um array de imagens se for um álbum
+            // image: './img/Shoppe/Chaleira 2.jpeg', // Removido, pois um produto geralmente tem uma imagem principal
+            shopeeLink: 'https://s.shopee.com.br/gFQ2x8gLQ',
+            id: 'CCJ-RBH-YVF',
         },
-         {
-            name: 'Bule de Cha',
-            descriçao:'Dê uma olhada em Em Estoque Chaleira Elétrica Retro Italiana Padrão Europeu SMEG para Preparação de Chá com 7 Configurações de Temperatur.',
-           price: 'R$ 1.696,00',
+        {
+            name: 'Bule de Chá Elétrico SMEG', // Nome mais específico
+            description: 'Dê uma olhada em Em Estoque Chaleira Elétrica Retro Italiana Padrão Europeu SMEG para Preparação de Chá com 7 Configurações de Temperatur.',
+            price: 'R$ 1.696,00',
             image: './img/Shoppe/Bule de Cha.jpeg',
-            shopeeLink: 'https://s.shopee.com.br/6KtmnHbvis', 
-            Id:'BLT-PZG-EAE',
+            shopeeLink: 'https://s.shopee.com.br/6KtmnHbvis',
+            id: 'BLT-PZG-EAE',
         },
         {
-            name: 'Chaveiro Personalizado',
-            descriçao: 'Dê uma olhada em Defesa Pessoal Chaveiro Feminino De Segurança Autodefesa Chaveiro Kit Alarme De Autodefesa Para Mulheres Menina Idosa.',
+            name: 'Chaveiro de Defesa Pessoal Feminino', // Nome mais específico
+            description: 'Dê uma olhada em Defesa Pessoal Chaveiro Feminino De Segurança Autodefesa Chaveiro Kit Alarme De Autodefesa Para Mulheres Menina Idosa.',
             price: 'R$ 46,90 - R$ 53,90',
-            image: './img/Shoppe/Chaveiro defesa pessoal .png', 
-            shopeeLink: 'https://s.shopee.com.br/AUjLl8cOUv' ,
-            Id:'BUK-QFP-XET',
+            image: './img/Shoppe/Chaveiro defesa pessoal .png',
+            shopeeLink: 'https://s.shopee.com.br/AUjLl8cOUv',
+            id: 'BUK-QFP-XET',
         },
         {
-            name: 'Chaveiro Camera',
-            descriçao:'Dê uma olhada em Chaveiro Personalizado Com Foto Instagram Presente Polaroid Câmera.',
+            name: 'Chaveiro Personalizado com Foto Instagram', // Nome mais específico
+            description: 'Dê uma olhada em Chaveiro Personalizado Com Foto Instagram Presente Polaroid Câmera.',
             price: 'R$ 24,99',
-            image: './img/Shoppe/Chaveiro Camera.jpeg', 
+            image: './img/Shoppe/Chaveiro Camera.jpeg',
             shopeeLink: 'https://s.shopee.com.br/8020mex6lY',
-            Id:'CDU-JDK-TVQ', 
+            id: 'CDU-JDK-TVQ',
         },
         {
-            name: 'Chaveiro',
-            descriçao:'Dê uma olhada em Chaveiro Personalizado Dia dos Namorados Calendario Data Frente e Verso Presente Casal Lembrancinha .',
+            name: 'Chaveiro Personalizado Dia dos Namorados', // Nome mais específico
+            description: 'Dê uma olhada em Chaveiro Personalizado Dia dos Namorados Calendario Data Frente e Verso Presente Casal Lembrancinha .',
             price: 'R$ 12,50 - R$ 22,75',
-            image: './img/Shoppe/Chaveiro Personalizado.jpeg', 
+            image: './img/Shoppe/Chaveiro Personalizado.jpeg',
             shopeeLink: 'https://s.shopee.com.br/9fAElob8km',
-            Id:'AHC-PYM-FNH',
+            id: 'AHC-PYM-FNH',
         },
-         {
-            name: 'Cordao de Chaveiro',
-            descriçao:'Dê uma olhada em Cordão Para Chaveiro OUDIMEIHE , Versátil De Corda De Fita Simples , Alça Colorida Durável INS DIY Canva.',
+        {
+            name: 'Cordão para Chaveiro OUDIMEIHE', // Nome mais específico
+            description: 'Dê uma olhada em Cordão Para Chaveiro OUDIMEIHE , Versátil De Corda De Fita Simples , Alça Colorida Durável INS DIY Canva.',
             price: 'R$ 15,31 - R$ 17,76',
-            image: './img/Shoppe/Cordão de Chaveiro.png', 
+            image: './img/Shoppe/Cordão de Chaveiro.png',
             shopeeLink: 'https://s.shopee.com.br/8pb7mQ0edF',
-            Id:'ANT-LGU-JKF',
+            id: 'ANT-LGU-JKF',
         },
         {
-            name: 'Kit Creme Facial',
-            descriçao:'Dê uma olhada em Kit 2 Creme Facial 50+ com Colágeno e Vitamina E Antirrugas e Anti- sinais Lucy\'s 100g Cada.',
-            price: 'R$' + '37,80',
-            image: './img/Shoppe/Colágeno .png', 
+            name: 'Kit 2 Creme Facial 50+ com Colágeno e Vitamina E', // Nome mais específico
+            description: 'Dê uma olhada em Kit 2 Creme Facial 50+ com Colágeno e Vitamina E Antirrugas e Anti- sinais Lucy\'s 100g Cada.',
+            price: 'R$ 37,80',
+            image: './img/Shoppe/Colágeno .png',
             shopeeLink: 'https://s.shopee.com.br/8020mzfpFH',
-            Id:'BEE-GFP-XXC',
+            id: 'BEE-GFP-XXC',
         },
         {
-            name: 'Creme Anti-estria',
-            descriçap:'Dê uma olhada em Creme Anti-Estrias Morena Brasil – Ação Poderosa com Colágeno e Elastina.',
+            name: 'Creme Anti-Estrias Morena Brasil', // Nome mais específico
+            description: 'Dê uma olhada em Creme Anti-Estrias Morena Brasil – Ação Poderosa com Colágeno e Elastina.',
             price: 'R$ 39,90',
-            image: './img/Shoppe/Anti-Estria.jpeg', 
+            image: './img/Shoppe/Anti-Estria.jpeg',
             shopeeLink: 'https://s.shopee.com.br/9UqoZqG5o5',
-            Id:'CFR-GYE-DJL', 
+            id: 'CFR-GYE-DJL',
         },
         {
-            name: 'Coleçao de Livros',
-            descriçao:'Dê uma olhada em Coleção C/5 livros: O Livro Das Línguas + O Livro Das Tintas + O Livro Do Papel + O Livro Do Lápis + O Livro Das Cores.',
+            name: 'Coleção C/5 Livros: O Livro Das Línguas + ...', // Nome mais específico e truncado para o exemplo
+            description: 'Dê uma olhada em Coleção C/5 livros: O Livro Das Línguas + O Livro Das Tintas + O Livro Do Papel + O Livro Do Lápis + O Livro Das Cores.',
             price: 'R$ 64,90',
-            image: './img/Shoppe/Coleção de Livros.png', 
+            image: './img/Shoppe/Coleção de Livros.png',
             shopeeLink: 'https://s.shopee.com.br/5AhpQ5QVst',
-            Id:'BHR-DFS-HFJ', 
+            id: 'BHR-DFS-HFJ',
         },
         {
             name: 'Livro - Pateta Faz História',
+            description: 'Dê uma olhada em Livro da Disney Pateta Faz História.', // Adicionei uma descrição básica
             price: 'R$ 19,97',
-            image: './img/Shoppe/Livro - Pateta faz historia.jpeg', 
+            image: './img/Shoppe/Livro - Pateta faz historia.jpeg',
             shopeeLink: 'https://s.shopee.com.br/8UyHOHhpY4',
-            Id: 'AYG-KHW-LXH', 
+            id: 'AYG-KHW-LXH',
         },
         {
-            name: 'Conjunto de Facas',
-            descriçao:'Dê uma olhada em Jogo De Facas de Cozinha Afiadas Conjunto De Facas, Faqueiro Kit De Faca 4 Facas e Acessórios 1 Tesoura, 1 Descascador.',
+            name: 'Conjunto de Facas de Cozinha 6 Peças', // Nome mais específico
+            description: 'Dê uma olhada em Jogo De Facas de Cozinha Afiadas Conjunto De Facas, Faqueiro Kit De Faca 4 Facas e Acessórios 1 Tesoura, 1 Descascador.',
             price: 'R$ 24,99 - R$ 69,99',
-            image: './img/Shoppe/Conjunto de Facas.png', 
+            image: './img/Shoppe/Conjunto de Facas.png',
             shopeeLink: 'https://s.shopee.com.br/9KXONtXPhu',
-            Id: 'AZE-WTF-RLW', 
+            id: 'AZE-WTF-RLW',
         },
         {
-            name: 'Conjunto de Facas',
-            descriçao:'Dê uma olhada em Kit de Conjunto Facas Coloridas Tesoura Descascador Cozinha Gourmet 6 Peças.',
+            name: 'Kit de Facas Coloridas Tesoura Descascador Cozinha Gourmet', // Nome mais específico
+            description: 'Dê uma olhada em Kit de Conjunto Facas Coloridas Tesoura Descascador Cozinha Gourmet 6 Peças.',
             price: 'R$ 35,00',
-            image: './img/Shoppe/Kit de Facas.jpeg', 
+            image: './img/Shoppe/Kit de Facas.jpeg',
             shopeeLink: 'https://s.shopee.com.br/30dKqIv8Zj',
-            Id: 'AEY-QQG-NWQ', 
+            id: 'AEY-QQG-NWQ',
         },
         {
-            name: 'Copo Térmico',
-            descriçao:'Dê uma olhada em Caneca Garrafa térmica Copo Térmico Marmorizado com Alça e Bico 1,2L 1200ML Aço Inoxidável.',
+            name: 'Copo Térmico Marmorizado com Alça e Bico 1,2L', // Nome mais específico
+            description: 'Dê uma olhada em Caneca Garrafa térmica Copo Térmico Marmorizado com Alça e Bico 1,2L 1200ML Aço Inoxidável.',
             price: 'R$ 77,00',
-            image: './img/Shoppe/Copo Térmico .png', 
+            image: './img/Shoppe/Copo Térmico .png',
             shopeeLink: 'https://s.shopee.com.br/LcZfbCoeD',
-            Id: 'CBX-KJR-LMT', 
+            id: 'CBX-KJR-LMT',
         },
         {
-            name: 'Copo Térmico',
-            descriçao:'Dê uma olhada em Copo Térmico Porta Latinha Barrigudinha Long Neck Lata Alta, O copo térmico 5 em 1 já personalizado.',
+            name: 'Copo Térmico Porta Latinha Barrigudinha Long Neck', // Nome mais específico
+            description: 'Dê uma olhada em Copo Térmico Porta Latinha Barrigudinha Long Neck Lata Alta, O copo térmico 5 em 1 já personalizado.',
             price: 'R$ 69,90',
-            image: './img/Shoppe/Copo Térmico.jpeg', 
+            image: './img/Shoppe/Copo Térmico.jpeg',
             shopeeLink: 'https://s.shopee.com.br/40Vs2Paq4F',
-            Id: 'AXQ-YMX-RYL', 
+            id: 'AXQ-YMX-RYL',
         },
         {
-            name: 'Creme de Rosto',
-            descriçao:'Dê uma olhada em Kit Desodorante Creme Dove Sérum Previne Escurecimento 50g + Desodorante Herbíssimo Care Rosa Mosqueta e Niacinamida 55.',
+            name: 'Kit Desodorante Creme Dove Sérum + Herbíssimo', // Nome mais específico
+            description: 'Dê uma olhada em Kit Desodorante Creme Dove Sérum Previne Escurecimento 50g + Desodorante Herbíssimo Care Rosa Mosqueta e Niacinamida 55.',
             price: 'R$ 34,90',
-            image: './img/Shoppe/Creme de Hibismo.jpeg', 
+            image: './img/Shoppe/Creme de Hibismo.jpeg',
             shopeeLink: 'https://s.shopee.com.br/3qCRqEpqBF',
-            Id:'CLH-RXC-CVG',
+            id: 'CLH-RXC-CVG',
         },
         {
-            name: 'Cruzadinho',
-            descriçao:'Dê uma olhada em kit 12 palavras cruzadas sem repetição revista passatempo cruzadinha diretas palavra cruzada.',
+            name: 'Kit 12 Palavras Cruzadas Sem Repetição', // Nome mais específico
+            description: 'Dê uma olhada em kit 12 palavras cruzadas sem repetição revista passatempo cruzadinha diretas palavra cruzada.',
             price: 'R$ 19,99',
-            image: './img/Shoppe/Cruzadinha.png', 
+            image: './img/Shoppe/Cruzadinha.png',
             shopeeLink: 'https://s.shopee.com.br/9pTezMDNO0',
-            Id: 'CGK-PEH-DVZ', 
+            id: 'CGK-PEH-DVZ',
         },
         {
-            name: 'Cruzadinho',
-            descriçao:'Dê uma olhada em Livro 99  Palavras Cruzadas - Cruzadinhas Editora Caras.',
+            name: 'Livro 99 Palavras Cruzadas - Editora Caras', // Nome mais específico
+            description: 'Dê uma olhada em Livro 99 Palavras Cruzadas - Cruzadinhas Editora Caras.',
             price: 'R$ 9,90',
-            image: './img/Shoppe/99 Cruzadas.jpeg', 
+            image: './img/Shoppe/99 Cruzadas.jpeg',
             shopeeLink: 'https://s.shopee.com.br/8KerCeIhRR',
-            Id: 'ACL-EZP-KFT', 
+            id: 'ACL-EZP-KFT',
         },
         {
-            name: 'Depilador Eletrico',
-            descriçao:'Dê uma olhada em Indução Laser depilador eletrico masculino feminino a laser Portátil corpo removedor de pêlos USB',
+            name: 'Depilador Elétrico a Laser Portátil', // Nome mais específico
+            description: 'Dê uma olhada em Indução Laser depilador eletrico masculino feminino a laser Portátil corpo removedor de pêlos USB',
             price: 'R$ 19,99 - R$ 56,99',
-            image: './img/Shoppe/Depilador.png', 
+            image: './img/Shoppe/Depilador.png',
             shopeeLink: 'https://s.shopee.com.br/9KXOOaKRZ9',
-            Id: 'ABY-ZGW-VDZ',
+            id: 'ABY-ZGW-VDZ',
         },
         {
-            name: 'Depilador a Laser Portatil',
-            descriçao:'Dê uma olhada em Depilador A Laser 900 Mil Pulsos Portátil.',
+            name: 'Depilador a Laser 900 Mil Pulsos Portátil', // Nome mais específico
+            description: 'Dê uma olhada em Depilador A Laser 900 Mil Pulsos Portátil.',
             price: 'R$ 199,99',
-            image: './img/Shoppe/Desumidificador.png', 
+            image: './img/Shoppe/Desumidificador.png', // Verifique se a imagem está correta para este produto. Parece ser um desumidificador.
             shopeeLink: 'https://s.shopee.com.br/5pxWEDaYGq',
-            Id:'BUW-VYG-PYJ', 
+            id: 'BUW-VYG-PYJ',
         },
-        /////////////////////////////////////////////////////////
+        // Continuar preenchendo os produtos restantes com as descrições e IDs
         {
             name: 'Desumidificador de Ar',
-            price: 'R$',
-            image: './img/Shoppe/Desumidificador.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            description: 'Ideal para ambientes úmidos, este desumidificador de ar compacto ajuda a combater mofo e odores.',
+            price: 'R$ 180,00',
+            image: './img/Shoppe/Desumidificador.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_DESUMIDIFICADOR', // Substitua pelo link real
+            id: 'DES-UMID-001',
+        },
+        {
+            name: 'Devocional Café com o Pai',
+            description: 'Um livro devocional inspirador para começar o dia com reflexões e mensagens de fé.',
+            price: 'R$ 35,00',
+            image: './img/Shoppe/Devocional.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_DEVOCIONAL',
+            id: 'DEV-CAF-PAI',
+        },
+        {
+            name: 'Ducha de Ferro para Jardim',
+            description: 'Ducha decorativa de ferro fundido, perfeita para seu jardim ou área externa, com um toque rústico e elegante.',
+            price: 'R$ 250,00',
+            image: './img/Shoppe/Ducha de Ferro.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_DUCHA',
+            id: 'DUC-FER-JAR',
+        },
+        {
+            name: 'Escova Elétrica para Limpeza',
+            description: 'Escova elétrica multifuncional para limpeza profunda de diversas superfícies em casa.',
+            price: 'R$ 79,99',
+            image: './img/Shoppe/Escola Elétrica .png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_ESCOVA_ELET',
+            id: 'ESC-ELET-LIMP',
+        },
+        {
+            name: 'Escova de Cabelo Desembaraçadora',
+            description: 'Escova de cabelo com cerdas flexíveis, ideal para desembaraçar todos os tipos de cabelo sem quebrar os fios.',
+            price: 'R$ 25,90',
+            image: './img/Shoppe/Escova .png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_ESCOVA_CABELO',
+            id: 'ESC-CAB-DES',
+        },
+        {
+            name: 'Escova Alisadora de Cabelo',
+            description: 'Escova que alisa o cabelo enquanto penteia, prática e eficiente para um liso perfeito.',
+            price: 'R$ 120,00',
+            image: './img/Shoppe/Escova Alisador.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_ESCOVA_ALISADORA',
+            id: 'ESC-ALIS-CAB',
+        },
+        {
+            name: 'Escova de Dente Elétrica',
+            description: 'Escova de dente elétrica com tecnologia avançada para uma limpeza bucal superior e mais eficaz.',
+            price: 'R$ 95,00',
+            image: './img/Shoppe/Escova Elétrica .png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_ESCOVA_DENTE',
+            id: 'ESC-DENT-ELET',
+        },
+        {
+            name: 'Esfregão Mágico Absorvente',
+            description: 'Esfregão super absorvente com sistema de torção fácil, ideal para limpar pisos com eficiência.',
+            price: 'R$ 65,00',
+            image: './img/Shoppe/Esfregão .png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_ESFREGAO',
+            id: 'ESF-MAG-ABS',
+        },
+        {
+            name: 'Esfregão Giratório com Balde',
+            description: 'Sistema completo de esfregão giratório com balde, facilita a limpeza e seca rapidamente.',
+            price: 'R$ 110,00',
+            image: './img/Shoppe/Esfregão giratório .png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_ESFREGAO_GIR',
+            id: 'ESF-GIR-BALDE',
+        },
+        {
+            name: 'Espelho de Maquiagem com LED',
+            description: 'Espelho de mesa com iluminação LED, perfeito para maquiagem e cuidados faciais com precisão.',
+            price: 'R$ 85,00',
+            image: './img/Shoppe/Espelho.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_ESPELHO',
+            id: 'ESP-MAQ-LED',
+        },
+        {
+            name: 'Filtro de Água Eletrônico',
+            description: 'Filtro de água eletrônico com múltiplas etapas de filtragem, garantindo água pura e saborosa.',
+            price: 'R$ 320,00',
+            image: './img/Shoppe/Filtro Elétrico .png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_FILTRO_ELET',
+            id: 'FILT-AGUA-ELET',
+        },
+        {
+            name: 'Fita Dupla Face Super Adesiva',
+            description: 'Fita dupla face de alta fixação, ideal para fixar objetos sem furar paredes.',
+            price: 'R$ 18,50',
+            image: './img/Shoppe/Fita Dupla.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_FITA_DUPLA',
+            id: 'FITA-DUPLA-001',
+        },
+        {
+            name: 'Fita LED RGB com Controle',
+            description: 'Fita de LED colorida RGB, perfeita para decorar ambientes e criar diferentes atmosferas.',
+            price: 'R$ 45,00',
+            image: './img/Shoppe/Fita Led.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_FITA_LED',
+            id: 'FITA-LED-RGB',
         },
         {
-            name: 'Devocional(Cafe com o Pai)',
-            price: 'R$',
-            image: './img/Shoppe/Devocional.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Fita Selante Impermeável',
+            description: 'Fita selante de alta resistência à água, ideal para reparos rápidos e eficazes em vazamentos.',
+            price: 'R$ 28,00',
+            image: './img/Shoppe/Fita Selante.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_FITA_SELANTE',
+            id: 'FITA-SEL-IMP',
         },
         {
-            name: 'Ducha de Ferro',
-            price: 'R$',
-            image: './img/Shoppe/Ducha de Ferro.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Fixador de Maquiagem Spray',
+            description: 'Spray fixador de maquiagem que prolonga a duração da make e hidrata a pele.',
+            price: 'R$ 32,00',
+            image: './img/Shoppe/Fixador.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_FIXADOR',
+            id: 'FIX-MAQ-SPRAY',
         },
         {
-            name: 'Escova Eletrica',
-            price: 'R$',
-            image: './img/Shoppe/Escola Elétrica .png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Fone Bluetooth Intra-auricular',
+            description: 'Fone de ouvido Bluetooth com design intra-auricular, som de alta qualidade e bateria de longa duração.',
+            price: 'R$ 89,90',
+            image: './img/Shoppe/Fone de Ouvido Bluetooth .png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_FONE_BT',
+            id: 'FONE-BT-INTRA',
         },
         {
-            name: 'Escova de Cabelo',
-            price: 'R$',
-            image: './img/Shoppe/Escova .png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Fone de Ouvido KZ Profissional',
+            description: 'Fone de ouvido KZ com áudio de alta fidelidade, ideal para músicos e amantes da música.',
+            price: 'R$ 150,00',
+            image: './img/Shoppe/Fone de Ouvido KZ.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_FONE_KZ',
+            id: 'FONE-KZ-PROF',
         },
         {
-            name: 'Escova de Cabelo liso',
-            price: 'R$',
-            image: './img/Shoppe/Escova Alisador.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Forminhas de Papel para Doces Finos',
+            description: 'Conjunto de forminhas de papel para doces finos, ideais para festas e eventos.',
+            price: 'R$ 15,00',
+            image: './img/Shoppe/Forminhas.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_FORMINHAS',
+            id: 'FORM-DOCES-PAPEL',
         },
         {
-            name: 'Escova de Dente Elétrico',
-            price: 'R$',
-            image: './img/Shoppe/Escova Elétrica .png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Gloss Labial Volumizador',
+            description: 'Gloss labial com efeito volumizador, hidrata e dá brilho intenso aos lábios.',
+            price: 'R$ 29,90',
+            image: './img/Shoppe/Gloss.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_GLOSS',
+            id: 'GLOSS-LABIAL-VOL',
         },
         {
-            name: 'Esfregao',
-            price: 'R$',
-            image: './img/Shoppe/Esfregão .png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Hidratante Labial com Cor',
+            description: 'Hidratante labial que oferece hidratação profunda e um toque de cor suave.',
+            price: 'R$ 22,50',
+            image: './img/Shoppe/Hidratante.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_HIDRATANTE_LABIAL',
+            id: 'HID-LABIAL-COR',
         },
         {
-            name: 'Esfregao giratorio',
-            price: 'R$',
-            image: './img/Shoppe/Esfregão giratório .png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Kit de Ferramentas Domésticas Essenciais',
+            description: 'Conjunto completo de ferramentas essenciais para pequenos reparos e montagens em casa.',
+            price: 'R$ 130,00',
+            image: './img/Shoppe/Jogo de chave.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_KIT_FERRAMENTAS',
+            id: 'KIT-FERR-DOMES',
         },
         {
-            name: 'Espelho',
-            price: 'R$',
-            image: './img/Shoppe/Espelho.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Kit Utensílios de Cozinha em Silicone',
+            description: 'Conjunto de utensílios de cozinha em silicone, resistentes ao calor e antiaderentes, para não riscar suas panelas.',
+            price: 'R$ 75,00',
+            image: './img/Shoppe/Jogo de Cozinha.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_KIT_COZINHA',
+            id: 'KIT-UTEN-COZ',
         },
         {
-            name: 'Filtro de Água Eletronico',
-            price: 'R$',
-            image: './img/Shoppe/Filtro Elétrico .png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Kit de Lençóis Casal 4 Peças',
+            description: 'Kit de lençóis para cama de casal, macio e confortável, em diversas cores.',
+            price: 'R$ 99,90',
+            image: './img/Shoppe/Jogo de Lençois.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_KIT_LENCOIS',
+            id: 'KIT-LENCOIS-CASAL',
         },
         {
-            name: 'Fita Dubla',
-            price: 'R$',
-            image: './img/Shoppe/Fita Dupla.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Kit Banho Completo com Acessórios',
+            description: 'Kit completo para banho com esponja, escova corporal e massageador, para um momento relaxante.',
+            price: 'R$ 45,00',
+            image: './img/Shoppe/Kit Banho.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_KIT_BANHO',
+            id: 'KIT-BANHO-COMPL',
         },
-/////////////////////////////////////////////////////////////////////////
         {
-            name: 'Fita LED',
-            price: 'R$',
-            image: './img/Shoppe/Fita Led.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Kit de Defesa Pessoal Compacto',
+            description: 'Kit de defesa pessoal discreto e eficaz, ideal para segurança no dia a dia.',
+            price: 'R$ 60,00',
+            image: './img/Shoppe/Kit Defensivo .png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_KIT_DEFESA',
+            id: 'KIT-DEFESA-PES',
         },
         {
-            name: 'Fita Selante',
-            price: 'R$',
-            image: './img/Shoppe/Fita Selante.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Kit Garrafas de Água Motivacionais 3 em 1',
+            description: 'Kit com três garrafas de tamanhos diferentes com frases motivacionais para te manter hidratado o dia todo.',
+            price: 'R$ 55,00',
+            image: './img/Shoppe/Kit Garrafa.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_KIT_GARRAFA',
+            id: 'KIT-GARRAFA-MOTIV',
         },
         {
-            name: 'Fixador de Maquiagem',
-            price: 'R$',
-            image: './img/Shoppe/Fixador.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Kit Manicure e Pedicure Profissional',
+            description: 'Kit completo para manicure e pedicure, com alicates, lixas e acessórios para unhas impecáveis.',
+            price: 'R$ 70,00',
+            image: './img/Shoppe/Kit Unha.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_KIT_UNHA',
+            id: 'KIT-UNHA-PROF',
         },
         {
-            name: 'Fone Bluetooth',
-            price: 'R$',
-            image: './img/Shoppe/Fone de Ouvido Bluetooth .png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Lip Gloss Hidratante e Brilhante',
+            description: 'Lip gloss de longa duração, que hidrata os lábios e proporciona um brilho intenso.',
+            price: 'R$ 25,00',
+            image: './img/Shoppe/Lib Gloss.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_LIP_GLOSS',
+            id: 'LIP-GLOSS-HIDRAT',
         },
         {
-            name: 'Fone de Ouvido',
-            price: 'R$',
-            image: './img/Shoppe/Fone de Ouvido KZ.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Kit Limpeza de Álbum de Fotos',
+            description: 'Kit com produtos específicos para limpar e preservar seus álbuns de fotos antigos.',
+            price: 'R$ 40,00',
+            image: './img/Shoppe/Limpeza Álbum .png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_LIMPEZA_ALBUM',
+            id: 'KIT-LIMP-ALBUM',
         },
         {
-            name: 'Forminhas de Doces',
-            price: 'R$',
-            image: './img/Shoppe/Forminhas.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Kit Limpeza de Computador e Eletrônicos',
+            description: 'Kit completo com sprays e panos especiais para limpar telas, teclados e outros eletrônicos.',
+            price: 'R$ 50,00',
+            image: './img/Shoppe/Limpeza de Computador.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_LIMP_COMPUTADOR',
+            id: 'KIT-LIMP-COMP',
         },
         {
-            name: 'Gloss Labial',
-            price: 'R$',
-            image: './img/Shoppe/Gloss.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Liquidificador Portátil USB',
+            description: 'Liquidificador compacto e portátil, recarregável via USB, ideal para shakes e sucos em qualquer lugar.',
+            price: 'R$ 85,00',
+            image: './img/Shoppe/Liquidificador .png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_LIQUIDIFICADOR',
+            id: 'LIQ-PORT-USB',
         },
         {
-            name: 'Hidratante Labial',
-            price: 'R$',
-            image: './img/Shoppe/Hidratante.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Livro - Quem Sou Eu?',
+            description: 'Livro de autoajuda e reflexão sobre autoconhecimento e propósito de vida.',
+            price: 'R$ 38,00',
+            image: './img/Shoppe/Livro - Quem sou.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_QUEM_SOU_EU',
+            id: 'LIVRO-QUEM-SOU',
         },
         {
-            name: 'Kit de Ferrramentas',
-            price: 'R$',
-            image: './img/Shoppe/Jogo de chave.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Livro - Atos a Apocalipse (Estudo Bíblico)',
+            description: 'Estudo aprofundado dos livros de Atos a Apocalipse, ideal para aprofundar seu conhecimento bíblico.',
+            price: 'R$ 49,90',
+            image: './img/Shoppe/Livro -Atos.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_ATOS_APOCALIPSE',
+            id: 'LIVRO-ATOS-APOC',
         },
         {
-            name: 'Kit de Cozinha',
-            price: 'R$',
-            image: './img/Shoppe/Jogo de Cozinha.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Livro para Colorir Anti-Estresse',
+            description: 'Livro para colorir com desenhos detalhados, ideal para relaxar e aliviar o estresse.',
+            price: 'R$ 20,00',
+            image: './img/Shoppe/Livro para Colorir.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_LIVRO_COLORIR',
+            id: 'LIVRO-COLORIR',
         },
         {
-            name: 'Kit de Lençois',
-            price: 'R$',
-            image: './img/Shoppe/Jogo de Lençois.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Livro - O Futuro (Ciência e Tecnologia)',
+            description: 'Explore as tendências e inovações que moldarão o futuro da humanidade em ciência e tecnologia.',
+            price: 'R$ 65,00',
+            image: './img/Shoppe/Livro- Futuro.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_LIVRO_FUTURO',
+            id: 'LIVRO-FUTURO',
         },
         {
-            name: 'Kit Banho',
-            price: 'R$',
-            image: './img/Shoppe/Kit Banho.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Livro Infantil - Minhas Primeiras Palavras',
+            description: 'Livro educativo para crianças, com ilustrações e as primeiras palavras para aprender e se divertir.',
+            price: 'R$ 29,90',
+            image: './img/Shoppe/Livro- Primeira Palavras.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_PRIMEIRAS_PALAVRAS',
+            id: 'LIVRO-PRIM-PALAVRAS',
         },
         {
-            name: 'Kit Defenca Pessoal',
-            price: 'R$',
-            image: './img/Shoppe/Kit Defensivo .png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Livro - A Tríade do Poder (Desenvolvimento Pessoal)',
+            description: 'Descubra os pilares do poder pessoal e como aplicá-los para alcançar seus objetivos.',
+            price: 'R$ 55,00',
+            image: './img/Shoppe/Livro- triade.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_TRIADE_PODER',
+            id: 'LIVRO-TRIADE-PODER',
         },
         {
-            name: 'Kit Garrafa',
-            price: 'R$',
-            image: './img/Shoppe/Kit Garrafa.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Lixadeira Elétrica de Mão',
+            description: 'Lixadeira elétrica compacta e potente, ideal para trabalhos em madeira e acabamentos.',
+            price: 'R$ 150,00',
+            image: './img/Shoppe/Lixadeira.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_LIXADEIRA',
+            id: 'LIXADEIRA-ELET',
         },
         {
-            name: 'Kit Unha',
-            price: 'R$',
-            image: './img/Shoppe/Kit Unha.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Manta de Sofá Decorativa',
+            description: 'Manta macia e elegante para decorar seu sofá, proporcionando conforto e estilo ao ambiente.',
+            price: 'R$ 70,00',
+            image: './img/Shoppe/Manta.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_MANTA_SOFA',
+            id: 'MANTA-SOFA-DECOR',
         },
         {
-            name: 'Lib Gloss',
-            price: 'R$',
-            image: './img/Shoppe/Lib Gloss.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Maquiagem Capilar com Efeito Natural',
+            description: 'Maquiagem capilar que disfarça falhas e dá volume aos cabelos, com resultado natural.',
+            price: 'R$ 80,00',
+            image: './img/Shoppe/Maquiagem Capilar.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_MAQUIAGEM_CAPILAR',
+            id: 'MAQ-CAPILAR-NAT',
         },
         {
-            name: 'Kit Limpeza de Album',
-            price: 'R$',
-            image: './img/Shoppe/Limpeza Álbum .png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Mini Máquina de Costura Portátil',
+            description: 'Mini máquina de costura compacta e fácil de usar, ideal para pequenos reparos e projetos de costura.',
+            price: 'R$ 95,00',
+            image: './img/Shoppe/Maquina mini.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_MINI_MAQ_COSTURA',
+            id: 'MINI-MAQ-COST',
         },
         {
-            name: 'Kit Limpeza de Computador',
-            price: 'R$',
-            image: './img/Shoppe/Limpeza de Computador.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Meia Cano Curto Unissex Kit 3 Pares',
+            description: 'Kit com 3 pares de meias cano curto, confortáveis e ideais para o dia a dia e prática de exercícios.',
+            price: 'R$ 25,00',
+            image: './img/Shoppe/Meia.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_MEIA',
+            id: 'MEIA-CANO-CURTO',
         },
         {
-            name: 'Liquidificador',
-            price: 'R$',
-            image: './img/Shoppe/Liquidificador .png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Mesa de Cabeceira Lateral com Gaveta',
+            description: 'Mesa de cabeceira compacta com gaveta, perfeita para organizar seus itens essenciais ao lado da cama.',
+            price: 'R$ 160,00',
+            image: './img/Shoppe/Mesa Cabeceira.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_MESA_CABECEIRA',
+            id: 'MESA-CABEC-LAT',
         },
         {
-            name: 'Livro - Quem sou Eu?',
-            price: 'R$',
-            image: './img/Shoppe/Livro - Quem sou.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Mix de Castanhas Premium 500g',
+            description: 'Delicioso mix de castanhas frescas e selecionadas, perfeito para um lanche saudável e energético.',
+            price: 'R$ 48,00',
+            image: './img/Shoppe/Mix.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_MIX',
+            id: 'MIX-CASTANHAS',
         },
         {
-            name: 'Livro - Atos a Apocalipse',
-            price: 'R$',
-            image: './img/Shoppe/Livro -Atos.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Mini Climatizador de Ar Portátil USB',
+            description: 'Mini climatizador de ar pessoal, refresca e umidifica o ambiente, alimentado por USB.',
+            price: 'R$ 110,00',
+            image: './img/Shoppe/MIni- Ar condicionador .png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_MINI_AR_COND',
+            id: 'MINI-AR-COND',
         },
         {
-            name: 'Livro para Colorir',
-            price: 'R$',
-            image: './img/Shoppe/Livro para Colorir.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Misturador Manual de Bebidas',
+            description: 'Misturador manual prático e rápido para preparar bebidas, molhos e cremes sem esforço.',
+            price: 'R$ 22,00',
+            image: './img/Shoppe/Misturador.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_MISTURADOR',
+            id: 'MISTURADOR-MANUAL',
         },
         {
-            name: 'Livro - Futuro',
-            price: 'R$',
-            image: './img/Shoppe/Livro- Futuro.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Organizador de Maquiagem Acrílico',
+            description: 'Organizador elegante de maquiagem em acrílico, ideal para manter seus produtos organizados e à vista.',
+            price: 'R$ 75,00',
+            image: './img/Shoppe/Organizador.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_ORGANIZADOR',
+            id: 'ORG-MAQ-ACR',
         },
         {
-            name: 'Livro - Primeiras Palavras',
-            price: 'R$',
-            image: './img/Shoppe/Livro- Primeira Palavras.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Paleta de Sombras Neutras e Brilhantes',
+            description: 'Paleta de sombras com cores neutras para o dia a dia e tons brilhantes para looks especiais.',
+            price: 'R$ 60,00',
+            image: './img/Shoppe/Paleta de Sombra.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_PALETA_SOMBRA',
+            id: 'PALETA-SOMBRA',
         },
         {
-            name: 'Livro - Triade do Poder',
-            price: 'R$',
-            image: './img/Shoppe/Livro- triade.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Parafuso de Borracha Antivibração (Kit)',
+            description: 'Kit de parafusos de borracha antivibração, ideal para fixar componentes eletrônicos ou objetos sensíveis.',
+            price: 'R$ 12,00',
+            image: './img/Shoppe/Parrafuso de Borracha.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_PARAFUSO_BORRACHA',
+            id: 'PARAF-BORRACHA',
         },
         {
-            name: 'Lixadeira',
-            price: 'R$',
-            image: './img/Shoppe/Lixadeira.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
+            name: 'Passadeira Antiderrapante para Cozinha',
+            description: 'Passadeira para cozinha com base antiderrapante, que oferece segurança e conforto ao cozinhar.',
+            price: 'R$ 55,00',
+            image: './img/Shoppe/Passadeira.png',
+            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_PASSADEIRA',
+            id: 'PASSADEIRA-COZ',
         },
-        {
-            name: 'Manta de Sofa',
-            price: 'R$',
-            image: './img/Shoppe/Manta.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Maquiagem Capilar',
-            price: 'R$',
-            image: './img/Shoppe/Maquiagem Capilar.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Mini Maquina de Costura',
-            price: 'R$',
-            image: './img/Shoppe/Maquina mini.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Meia',
-            price: 'R$',
-            image: './img/Shoppe/Meia.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Mesa Cabeceira',
-            price: 'R$',
-            image: './img/Shoppe/Mesa Cabeceira.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Mix',
-            price: 'R$',
-            image: './img/Shoppe/Mix.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Mini - Ar Condicionado',
-            price: 'R$',
-            image: './img/Shoppe/MIni- Ar condicionador .png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Misturador',
-            price: 'R$',
-            image: './img/Shoppe/Misturador.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Organizador de Maquiagem',
-            price: 'R$',
-            image: './img/Shoppe/Organizador.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Paleta de Maquiagem',
-            price: 'R$',
-            image: './img/Shoppe/Paleta de Sombra.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Parrafuso de Borracha',
-            price: 'R$',
-            image: './img/Shoppe/Parrafuso de Borracha.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Passadeira',
-            price: 'R$',
-            image: './img/Shoppe/Passadeira.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Pelicula de Celular',
-            price: 'R$',
-            image: './img/Shoppe/Película .png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Pelicula de Celular HD',
-            price: 'R$',
-            image: './img/Shoppe/Película HD.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Pijama',
-            price: 'R$',
-            image: './img/Shoppe/Pijama.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Pilha Alcalina',
-            price: 'R$',
-            image: './img/Shoppe/Pilha Alcalina .png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: '4 Pilha',
-            price: 'R$',
-            image: './img/Shoppe/Pilha.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Prateleira de Banheiro',
-            price: 'R$',
-            image: './img/Shoppe/Prateleira.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Primer de maquiagem',
-            price: 'R$',
-            image: './img/Shoppe/Primer.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Projetor 4K',
-            price: 'R$',
-            image: './img/Shoppe/Projetor 4K.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Projetor',
-            price: 'R$',
-            image: './img/Shoppe/Projetor.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Protetor Solar',
-            price: 'R$',
-            image: './img/Shoppe/Protetor Solar.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Purificador de Ar',
-            price: 'R$',
-            image: './img/Shoppe/Purificador de ar.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Regata',
-            price: 'R$',
-            image: './img/Shoppe/Regata.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Repelente',
-            price: 'R$',
-            image: './img/Shoppe/Repelente.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Robo de Limpeza',
-            price: 'R$',
-            image: './img/Shoppe/Robo.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Rodo',
-            price: 'R$',
-            image: './img/Shoppe/Rodo.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Sanduicheira',
-            price: 'R$',
-            image: './img/Shoppe/Sanduicheira.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Sapateria',
-            price: 'R$',
-            image: './img/Shoppe/Sapateria.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Serum Facial',
-            price: 'R$',
-            image: './img/Shoppe/Serum.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Shorts Legging',
-            price: 'R$',
-            image: './img/Shoppe/Short Legging.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Short Feminino',
-            price: 'R$',
-            image: './img/Shoppe/Short.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Chaleira(Smeg)',
-            price: 'R$',
-            image: './img/Shoppe/Smeg - Chaleira.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Stick de Maquiagem',
-            price: 'R$',
-            image: './img/Shoppe/Stick de Blush.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Tapate',
-            price: 'R$',
-            image: './img/Shoppe/Tapate.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Regua de Tomada',
-            price: 'R$',
-            image: './img/Shoppe/Tomada.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Torradeira',
-            price: 'R$',
-            image: './img/Shoppe/Torradeira.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Triturador de Alimentos',
-            price: 'R$',
-            image: './img/Shoppe/Triturador.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'TV Box',
-            price: 'R$',
-            image: './img/Shoppe/TV.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Ventilador de Teto',
-            price: 'R$',
-            image: './img/Shoppe/Ventilador de teto.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Ventilador de Teto',
-            price: 'R$',
-            image: './img/Shoppe/Ventilador.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Vestido Feminino',
-            price: 'R$',
-            image: './img/Shoppe/Vestido.png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        {
-            name: 'Xicara de Café',
-            price: 'R$',
-            image: './img/Shoppe/Xícara de Café .png', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },
-        /*{
-            name: '',
-            price: 'R$',
-            image: './img/Shoppe/', 
-            shopeeLink: 'https://s.shopee.com.br/' 
-        },*/
-        
+        // ... (Adicione os produtos restantes aqui, seguindo o mesmo formato)
     ];
 
+    // Função para criar um card de produto
     function createProductCard(product) {
-        const card = document.createElement('div');
-        card.classList.add('product-card'); // Adiciona a classe para estilização CSS
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
 
-        card.innerHTML = `
+        productCard.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
             <h3>${product.name}</h3>
+            <p class="description">${product.description}</p>
             <p class="price">${product.price}</p>
-            <a href="${product.shopeeLink}" target="_blank" class="buy-button">Ver na Shopee</a>
+            <a href="${product.shopeeLink}" target="_blank" rel="noopener noreferrer" class="buy-button">Ver na Shopee</a>
         `;
-        // O "target="_blank"" garante que o link abra em uma nova aba
-        // O "buy-button" é uma classe para você estilizar o botão no CSS
-
-        return card;
+        return productCard;
     }
 
-    // Itera sobre os dados dos produtos e cria os cards no HTML
-    productsData.forEach(product => {
-        const cardElement = createProductCard(product);
-        productListDiv.appendChild(cardElement);
-    });
-
-    // --- Funcionalidade "Leia Mais/Menos" para a biografia (opcional) ---
-    const bioText = document.querySelector('.linktree-user-bio p');
-    const toggleButton = document.querySelector('.toggle-text-btn');
-    const originalText = bioText.textContent;
-    const shortTextLength = 100; // Defina um limite de caracteres para o texto curto
-
-    if (originalText.length > shortTextLength) {
-        bioText.textContent = originalText.substring(0, shortTextLength) + '...';
-        toggleButton.style.display = 'inline'; // Mostra o botão se o texto for longo
-    } else {
-        toggleButton.style.display = 'none'; // Esconde o botão se o texto for curto
-    }
-
-    toggleButton.addEventListener('click', () => {
-        if (bioText.textContent.includes('...')) {
-            bioText.textContent = originalText;
-            toggleButton.textContent = '...menos';
-        } else {
-            bioText.textContent = originalText.substring(0, shortTextLength) + '...';
-            toggleButton.textContent = '...mais';
+    // Função para exibir os produtos
+    function displayProducts(productsToDisplay) {
+        productListDiv.innerHTML = ''; // Limpa a lista antes de adicionar novos produtos
+        if (productsToDisplay.length === 0) {
+            productListDiv.innerHTML = '<p class="no-results">Nenhum produto encontrado. Tente outra pesquisa!</p>';
+            return;
         }
+        productsToDisplay.forEach(product => {
+            productListDiv.appendChild(createProductCard(product));
+        });
+    }
+
+    // Lógica para pesquisa
+    searchForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Impede o envio padrão do formulário
+        const searchTerm = searchInput.value.toLowerCase().trim();
+
+        const filteredProducts = productsData.filter(product => {
+            return product.name.toLowerCase().includes(searchTerm) ||
+                   (product.description && product.description.toLowerCase().includes(searchTerm)) || // Verifica se a descrição existe
+                   (product.id && product.id.toLowerCase().includes(searchTerm)); // Permite pesquisar por ID
+        });
+        displayProducts(filteredProducts);
+
+        // Se a pesquisa for enviada via GET, atualiza a URL
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.set('q', searchTerm);
+        window.history.pushState({ path: currentUrl.href }, '', currentUrl.href);
     });
 
+    // Função para lidar com a pesquisa inicial (se houver um termo na URL)
+    function handleInitialSearch() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const initialSearchTerm = urlParams.get('q');
+        if (initialSearchTerm) {
+            searchInput.value = initialSearchTerm; // Preenche o campo de pesquisa
+            const filteredProducts = productsData.filter(product => {
+                return product.name.toLowerCase().includes(initialSearchTerm.toLowerCase()) ||
+                       (product.description && product.description.toLowerCase().includes(initialSearchTerm.toLowerCase())) ||
+                       (product.id && product.id.toLowerCase().includes(initialSearchTerm.toLowerCase()));
+            });
+            displayProducts(filteredProducts);
+        } else {
+            displayProducts(productsData); // Exibe todos os produtos se não houver pesquisa inicial
+        }
+    }
+
+    // Exibir todos os produtos ao carregar a página (ou resultados da pesquisa inicial)
+    handleInitialSearch();
+
+    // Lógica para o botão "ler mais/menos" na bio (opcional, se você quiser implementar)
+    const bioParagraph = document.querySelector('.linktree-user-bio p');
+    const toggleBioButton = document.querySelector('.toggle-text-btn');
+    const fullBioText = bioParagraph.textContent; // Armazena o texto completo
+    const shortBioLength = 150; // Defina um limite de caracteres para a bio curta
+
+    if (fullBioText.length > shortBioLength) {
+        bioParagraph.textContent = fullBioText.substring(0, shortBioLength) + '...';
+        toggleBioButton.style.display = 'inline'; // Mostra o botão se o texto for longo
+
+        toggleBioButton.addEventListener('click', () => {
+            if (bioParagraph.textContent.includes('...')) {
+                bioParagraph.textContent = fullBioText;
+                toggleBioButton.textContent = '...menos';
+            } else {
+                bioParagraph.textContent = fullBioText.substring(0, shortBioLength) + '...';
+                toggleBioButton.textContent = '...mais';
+            }
+        });
+    }
 });

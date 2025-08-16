@@ -3,38 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css"> <title>Minha Coleção</title>
+    <link rel="stylesheet" href="/style.css">
+    <title>Minha Coleção Shoppe | Achadinhos e Utensílios</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/produtos">Produtos</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/produtos">Produtos</a></li>
+                </ul>
+        </nav>
 
-    <form action="/resultado-da-pesquisa" method="GET">
-        <input type="search" name="q" placeholder="Pesquisar produtos..." />
-        <button type="submit">Pesquisar</button>
-    </form>
+        <form action="/resultado-da-pesquisa" method="GET" class="search-form">
+            <input type="search" name="q" placeholder="Pesquisar produtos..." aria-label="Pesquisar produtos" />
+            <button type="submit">Pesquisar</button>
+        </form>
+    </header>
 
-    <div class="linktree-user-profile"> <div class="linktree-user-avatar">
-            <img src="./img/Shoppe/Icon.jpeg" alt="Logo da Shoppe">
+    <div class="linktree-user-profile">
+        <div class="linktree-user-avatar">
+            <img src="./img/Shoppe/Icon.jpeg" alt="Logo da Shoppe - Minha Coleção" aria-label="Logo da Minha Coleção Shoppe">
         </div>
         <div class="linktree-user-name">
             <h2>Shopping Shoppe</h2>
         </div>
         <div class="linktree-user-bio">
-            <p>Bem-vindo à Minha Coleção! ⚠️Filiados da Shoppe⚠️. Achadinhos Shoppe, utensílios, objetos para cozinha, quarto, banheiro, sala, quintal, área de serviço, etc... Clique nas fotos para ir direto ao site oficial da Shopee.</p>
-            <span class="toggle-text-btn">...menos</span> </div>
+            <p>Bem-vindo à **Minha Coleção Shoppe**! Somos afiliados e trazemos os melhores achadinhos em utensílios, objetos para cozinha, quarto, banheiro, sala, quintal, área de serviço e muito mais! Clique nas fotos dos produtos para ir direto ao site oficial da Shopee e aproveitar as ofertas. ⚠️ *Filiados da Shopee* ⚠️</p>
+            <span class="toggle-text-btn" style="display: none;">...menos</span>
+        </div>
     </div>
-    
-    <h1>Nossos Produtos</h1> <main id="product-list">
-        </main>
+
+    <main>
+        <h1>Nossos Produtos Em Destaque</h1>
+        <section id="product-list">
+            </section>
+    </main>
 
     <footer>
-        <p>&copy; @2025 Minha Loja</p>
+        <p>&copy; 2025 Minha Coleção Shoppe. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="/static/script.js"></script> </body>
+    <script src="/static/script.js"></script>
+</body>
 </html>
