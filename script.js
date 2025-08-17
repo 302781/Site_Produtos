@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Batom Líquido', 
             description: 'Dê uma olhada em Sheglam Batom Líquido Matte Pout Pillow Cushion.',
             price: 'R$ 78,90',
-            image: './img/Shoppe/Batom Líquido.jpeg',
+            image: './img/Shoppe/Batom_Líquido.jpeg',
             shopeeLink: 'https://s.shopee.com.br/709SuIvlQf',
             id: 'BGZ-SKQ-UFD',
         },
