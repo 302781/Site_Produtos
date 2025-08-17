@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Cabo USB',
             description: 'Dê uma olhada em Conjunto de adaptador de cabo de carregamento múltiplo 6 em 1 USB C para USB Kit de cabo adaptador de celular Suporte de telefone celular pino de ejeção adaptador USB caixa de armazenamento portátil para viagem de negócio. ',
             price: 'R$ 15,00',
-            image: './img/Shoppe/Cabo usb.jpeg',
+            image: './img/Shoppe/Cabo Usb.png',
             shopeeLink: 'https://s.shopee.com.br/7V5kAWosvy',
             id: 'AHU-AUK-ZCD',
         },
