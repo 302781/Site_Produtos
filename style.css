@@ -17,35 +17,6 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra suave para o cabeçalho */
 }
 
-/* Estilo da barra de navegação */
-nav ul {
-    list-style: none; /* Remove marcadores da lista */
-    padding: 0;
-    margin: 0;
-    display: flex; /* Para alinhar os itens na horizontal */
-    justify-content: center;
-    margin-bottom: 15px; /* Espaço entre nav e form de pesquisa */
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 15px; /* Aumentado um pouco o padding dos links */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border-radius: 4px;
-    display: inline-block; /* Permite aplicar padding e transform */
-}
-
-nav ul li a:hover {
-    background-color: #e04a1f; /* Laranja um pouco mais escuro ao hover */
-    transform: translateY(-2px); /* Efeito de leve levantamento */
-}
-
 /* Estilo do formulário de pesquisa */
 .search-form { /* Usei a classe adicionada no HTML */
     display: flex; /* Para alinhar input e button na horizontal */
