@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Cabo USB',
             description: 'Dê uma olhada em Conjunto de adaptador de cabo de carregamento múltiplo 6 em 1 USB C para USB Kit de cabo adaptador de celular Suporte de telefone celular pino de ejeção adaptador USB caixa de armazenamento portátil para viagem de negócio. ',
             price: 'R$ 15,00',
-            image: './img/Shoppe/Cabo Usb.png',
+            image: './img/Shoppe/Cabo Usb.jpeg',
             shopeeLink: 'https://s.shopee.com.br/7V5kAWosvy',
             id: 'AHU-AUK-ZCD',
         },
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Smartwatch',
             description: 'Dê uma olhada em Case Acrílico + Película Silicone Protetora Para Smartwatch 41mm 45mm 49mm + Envio Rápido ',
             price: 'R$ 19,90',
-            image: './img/Shoppe/Smartwatch.jpg',
+            image: './img/Shoppe/smartwatch.jpg',
             shopeeLink: 'https://s.shopee.com.br/7ATQeTOxfV',
             id: 'ACJ-MBP-MFM',
         },
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Brinquedo robô',
             description: 'Dê uma olhada em Brinquedo Robô Dança Gira 360 Graus Robot Som led luz Brinquedo infantil Premium.',
             price: 'R$ 42,97',
-            image: './img/Shoppe/Brinquedo_robo.jpg',
+            image: './img/Shoppe/Brinquedo_Robo.jpg',
             shopeeLink: 'https://s.shopee.com.br/2g11IlN0N0',
             id: 'ALU-TQA-EBW',
         },
@@ -276,6 +276,14 @@ document.addEventListener('DOMContentLoaded', () => {
             shopeeLink: 'https://s.shopee.com.br/60HTH5jcBw',
             id: 'AHN-BTE-AVX',
         },
+ {
+            name: 'Lanterna',
+            description: 'Dê uma olhada em Lanterna Super Potente Tática Mais Forte Do Mundo Potente Sitio Fazenda Acampamento Camping Segurança',
+            price: 'R$20,50',
+            image: './img/Shoppe/lanterna.jpg',
+            shopeeLink: 'https://s.shopee.com.br/9AEdjqyF1K',
+            id: 'BCV-QTC-NZM',
+        },
         {
             name: 'Teclado Mecânico RGB',
             description: 'Dê uma olhada em Kit Mobilador Gamer Barato RGB 6 Itens Para Celular Mouse Teclado Mecanico Mouse Pad Tripé HUb USB',
@@ -292,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
             shopeeLink: 'https://s.shopee.com.br/5AiMHsZl6n',
             id: 'CKQ-MDD-MCE',
         },
-        {
+       /* {
             name: 'Kit de Ferramentas Domésticas Essenciais',
             description: 'Conjunto completo de ferramentas essenciais para pequenos reparos e montagens em casa.',
             price: 'R$ 130,00',
@@ -437,4 +445,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-});
+});*/
