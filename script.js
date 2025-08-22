@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
             image: './img/Shoppe/Fita LED.png',
             shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_FITA_LED',
             id: 'FITA-LED-RGB',
-        },
+        },*/
        
     ];
 
@@ -445,4 +445,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-});*/
+});
