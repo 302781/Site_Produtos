@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Lanterna',
             description: 'Dê uma olhada em Lanterna Super Potente Tática Mais Forte Do Mundo Potente Sitio Fazenda Acampamento Camping Segurança',
             price: 'R$20,50',
-            image: './img/Shoppe/lanterna.jpg',
+            image: './img/Shoppe/Lanterna.jpg',
             shopeeLink: 'https://s.shopee.com.br/9AEdjqyF1K',
             id: 'BCV-QTC-NZM',
         },
