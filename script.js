@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Kit Soprador Aspirador ',
             description: 'Dê uma olhada em Kit Soprador Aspirador Tnt P/ Esmerilhadeira De 4.1/2.',
             price: 'R$ 82,00',
-            image: './img/Shoppe/JSoprador,jpg',
+            image: './img/Shoppe/Soprador.jpg',
             shopeeLink: 'https://s.shopee.com.br/50P6eFpfBS',
             id: 'AYD-FUM-YVC',
         },/*
