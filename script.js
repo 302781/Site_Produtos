@@ -300,14 +300,14 @@ document.addEventListener('DOMContentLoaded', () => {
             shopeeLink: 'https://s.shopee.com.br/5AiMHsZl6n',
             id: 'CKQ-MDD-MCE',
         },
-       /* {
-            name: 'Kit de Ferramentas Domésticas Essenciais',
-            description: 'Conjunto completo de ferramentas essenciais para pequenos reparos e montagens em casa.',
-            price: 'R$ 130,00',
-            image: './img/Shoppe/Jogo de chave.png',
-            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_KIT_FERRAMENTAS',
-            id: 'KIT-FERR-DOMES',
-        },
+       {
+            name: 'Kit Soprador Aspirador ',
+            description: 'Dê uma olhada em Kit Soprador Aspirador Tnt P/ Esmerilhadeira De 4.1/2.',
+            price: 'R$ 82,00',
+            image: './img/Shoppe/JSoprador,jpg',
+            shopeeLink: 'https://s.shopee.com.br/50P6eFpfBS',
+            id: 'AYD-FUM-YVC',
+        },/*
         {
             name: 'Kit Limpeza de Computador e Eletrônicos',
             description: 'Kit completo com sprays e panos especiais para limpar telas, teclados e outros eletrônicos.',
