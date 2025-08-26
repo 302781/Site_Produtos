@@ -60,6 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
             shopeeLink: 'https://s.shopee.com.br/6KtmnHbvis',
             id: 'BLT-PZG-EAE',
         },
+/* {
+            name: 'Chaveiro Camera',
+            description: 'Dê uma olhada em .',
+            price: 'R$ ',
+            image: './img/Shoppe/Chaveiro Camera.jpeg',
+            shopeeLink: 'https://s.shopee.com.br/,
+            id: '',
+       },
+{
+            name: 'Chaveiro Personalizado',
+            description: 'Dê uma olhada em .',
+            price: 'R$ ',
+            image: './img/Shoppe/Chaveiro Personalizado.jpeg',
+            shopeeLink: 'https://s.shopee.com.br/,
+            id: '',
+       },*/
         {
             name: 'Chaveiro de Defesa Pessoal Feminino',
             description: 'Dê uma olhada em Defesa Pessoal Chaveiro Feminino De Segurança Autodefesa Chaveiro Kit Alarme De Autodefesa Para Mulheres Menina Idosa.',
@@ -92,6 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
             shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_DESUMIDIFICADOR', 
             id: 'DES-UMID-001',
         },
+/*{
+            name: 'D',
+            description: 'Dê uma olhada em .',
+            price: 'R$ ',
+            image: './img/Shoppe/Chaveiro Camera.jpeg',
+            shopeeLink: 'https://s.shopee.com.br/,
+            id: '',
+       },*/
         {
             name: 'Bucha de Ferro',
             description: 'Ducha decorativa de ferro fundido, perfeita para seu jardim ou área externa, com um toque rústico e elegante.',
