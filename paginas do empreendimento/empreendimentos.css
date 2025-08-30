@@ -6,16 +6,17 @@
 
 .main-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0 20px;
-    background-color: #ff5722;
+    padding: 10px 20px;
+    background-color: #DEB887;
+    border-bottom: 1px solid #DEB887;
+    gap: 10px;
 }
 
 .main-nav .logo {
     font-size: 1.5em;
     font-weight: bold;
-    color: white;
 }
 
 .main-nav ul {
@@ -26,7 +27,6 @@
 }
 
 .main-nav ul li a {
-    color: white;
     text-decoration: none;
     padding: 15px 20px;
     display: block;
@@ -34,18 +34,19 @@
 }
 
 .main-nav ul li a:hover {
-    background-color: #e04a1f;
+    background-color: 139,69,19;
 }
 
 .search-form-container {
-    background-color: #ff5722;
-    padding-bottom: 15px;
+    background-color: 139,69,19;
+    padding-bottom: 20px;
+    justify-content: center;
 }
 
 .page-header {
     text-align: center;
     padding: 40px 20px;
-    background-color: #f0f0f0;
+    background-color: #FFF8DC;
     margin-bottom: 20px;
 }
 
@@ -79,7 +80,7 @@
 }
 
 .cards-wrapper {
-    display: grid;
+    display: block;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }

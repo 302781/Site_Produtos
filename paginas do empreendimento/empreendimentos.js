@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
     const empreendimentosListDiv = document.getElementById('empreendimentos-list');
 
     const empreendimentosData = [
@@ -51,4 +51,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Exibe todos os empreendimentos ao carregar a página
     displayEmpreendimentos(empreendimentosData);
-});
+});*/
