@@ -3,132 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empreendimentos - Vitória Soluções</title>
+    <title>Nossos Empreendimentos | Shopping Shoppe</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="paginas do empreendimento/empreendimentos.css">
-    <link rel="icon" href="img/Shoppe/Icon.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="empreendimentos.css">
 </head>
 <body>
     <header>
         <nav class="main-nav">
-            <div class="logo">Vitória Soluções</div>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="empreendimentos.html">Empreendimentos</a></li>
-            </ul>
+            <a href="index.html" class="back-button">← Voltar para a loja</a>
         </nav>
-        <div class="search-form-container">
-            <form action="/resultado-da-pesquisa" method="GET" class="search-form">
-                <input type="search" name="q" placeholder="Pesquisar produtos..." aria-label="Pesquisar produtos" />
-                <button type="submit">Pesquisar</button>
-            </form>
-        </div>
     </header>
 
-    <main class="empreendimentos-main">
-        <section class="page-header">
-            <h1>Nossos Empreendimentos</h1>
-            <p>Conheça os projetos de vida que temos a oferecer para você e sua família.</p>
-        </section>
-        
-        <section class="empreendimentos-grid">
-            
-            <div class="card-group">
-                <h2 class="group-title">Recanto dos Pássaros - Recanto das Emas/DF</h2>
-                <div class="cards-wrapper">
-                    <a href="#contatos" class="empreendimento-card">
-                        <img src="paginas do empreendimento/img/passaros.png" alt="Recanto dos Colibris">
-                        <div class="card-content">
-                            <h3>Recanto dos Passaros</h3>
-                            <p>Apartamentos de estúdio de 27,79m².</p>
-                        </div>
-                    </a>
+    <div class="linktree-user-profile">
+        <div class="linktree-user-avatar">
+            <img src="img/Shoppe/Icon.jpeg" alt="Logo da Shoppe - Minha Coleção" aria-label="Logo da Minha Coleção Shoppe">
+        </div>
+        <div class="linktree-user-name">
+            <h2>Nossos Empreendimentos</h2>
+        </div>
+        <div class="linktree-user-bio">
+            <p>Conheça os projetos que estamos desenvolvendo. Aqui, você encontra o futuro da inovação e do mercado digital.</p>
+        </div>
+        <div class="new-section-link">
+            <a href="contatos.html" class="empreendimentos-btn">Contatar para Empreendimentos</a>
+        </div>
+    </div>
 
-           <!-- <div class="card-group">
-                <h2 class="group-title">Total Ville - Planaltina/DF</h2>
-                <div class="cards-wrapper">
-                    <a href="total-ville-planaltina.html" class="empreendimento-card">
-                        <img src="./img/empreendimentos/total-ville-planaltina.jpg" alt="Total Ville Planaltina Condomínio 16">
-                        <div class="card-content">
-                            <h3>Total Ville Planaltina</h3>
-                            <p>Apartamentos com lazer de clube.</p>
-                        </div>
-                    </a>
-                    <a href="total-ville-planaltina-2.html" class="empreendimento-card">
-                        <img src="./img/empreendimentos/total-ville-planaltina-2.jpg" alt="Total Ville Planaltina Condomínio 2">
-                        <div class="card-content">
-                            <h3>Total Ville Planaltina 2</h3>
-                            <p>Apartamentos de 1 e 2 quartos (43,45m²).</p>
-                        </div>
-                    </a>
-                </div>
-            </div>-->
-
-            <div class="card-group">
-                <h2 class="group-title">Total Ville Ikeda - Ceilândia/DF</h2>
-                <div class="cards-wrapper">
-                    <a href="#" class="empreendimento-card">
-                        <img src="paginas do empreendimento/img/Ikeda.jpg" alt="Total Ville Ikeda">
-                        <div class="card-content">
-                            <h3>Total Ville Ikeda</h3>
-                            <p>Apartamentos de 2 e 3 quartos com lazer de clube.</p>
-                        </div>
-                    </a>
-                    <!--<a href="total-ville-ikeda-2.html" class="empreendimento-card">
-                        <img src="./img/empreendimentos/total-ville-ikeda-2.jpg" alt="Total Ville Ikeda Condomínio 2">
-                        <div class="card-content">
-                            <h3>Total Ville Ikeda 2</h3>
-                            <p>Apartamentos com 2 e 3 quartos, suíte e varanda.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>-->
-
-            <div class="card-group">
-                <h2 class="group-title">Total Ville - Santa Maria/DF</h2>
-                <div class="cards-wrapper">
-                    <a href="#" class="empreendimento-card">
-                        <img src="paginas do empreendimento/img/conviver.jpg" alt="Total Ville Conviver">
-                        <div class="card-content">
-                            <h3>Total Ville Conviver</h3>
-                            <p>Apartamentos de 2 e 3 quartos com suíte.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="card-group">
-                <h2 class="group-title">Águas Claras/DF</h2>
-                <div class="cards-wrapper">
-                    <a href="#" class="empreendimento-card">
-                        <img src="paginas do empreendimento/img/reserva.jpg" alt="Reserva Parque Clube">
-                        <div class="card-content">
-                            <h3>Reserva Parque Clube</h3>
-                            <p>Apartamentos de 2 e 3 quartos (63m² e 81m²).</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="card-group">
-                <h2 class="group-title">Águas Claras/DF</h2>
-                <div class="cards-wrapper">
-                    <a href="#" class="empreendimento-card">
-                        <img src="paginas do empreendimento/img/Lumi.png" alt="Reserva Parque Clube">
-                        <div class="card-content">
-                            <h3>Lumi Tower Residence</h3>
-                            <p>Apartamentos de 2 e 3 quartos com suite(59.86m² até 72.06m²).</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            
+    <main>
+        <section id="empreendimentos-list">
         </section>
     </main>
 
     <footer>
-         <a href="contatos.html" class="back-button">Ir para Contatos</a>
-        <p>&copy; 2025 Vitória Soluções. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Shopping Shoppe. Todos os direitos reservados.</p>
     </footer>
 
+    <script src="empreendimentos.js"></script>
 </body>
 </html>
