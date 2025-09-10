@@ -3,39 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossos Empreendimentos | Shopping Shoppe</title>
+    <title>Empreendimentos - Vitória Soluções</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="empreendimentos.css">
+    <link rel="icon" href="img/Shoppe/Icon.jpeg" type="image/jpeg">
 </head>
 <body>
     <header>
         <nav class="main-nav">
-            <a href="index.html" class="back-button">← Voltar para a loja</a>
+            <div class="logo">Vitória Soluções</div>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="empreendimentos.html">Empreendimentos</a></li>
+            </ul>
         </nav>
+        <a href="index.html" class="back-button">← Voltar para a loja</a>
     </header>
 
-    <div class="linktree-user-profile">
-        <div class="linktree-user-avatar">
-            <img src="img/Shoppe/Icon.jpeg" alt="Logo da Shoppe - Minha Coleção" aria-label="Logo da Minha Coleção Shoppe">
-        </div>
-        <div class="linktree-user-name">
-            <h2>Nossos Empreendimentos</h2>
-        </div>
-        <div class="linktree-user-bio">
-            <p>Conheça os projetos que estamos desenvolvendo. Aqui, você encontra o futuro da inovação e do mercado digital.</p>
-        </div>
-        <div class="new-section-link">
-            <a href="contatos.html" class="empreendimentos-btn">Contatar para Empreendimentos</a>
-        </div>
-    </div>
-
-    <main>
-        <section id="empreendimentos-list">
+    <main class="empreendimentos-main">
+        <section class="page-header">
+            <h1>Nossos Empreendimentos</h1>
+            <p>Conheça os projetos de vida que temos a oferecer para você e sua família.</p>
         </section>
+        
+        <section class="empreendimentos-grid" id="empreendimentos-grid"></section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Shopping Shoppe. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Vitória Soluções. Todos os direitos reservados.</p>
     </footer>
 
     <script src="empreendimentos.js"></script>

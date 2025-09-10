@@ -1,54 +1,92 @@
-/*document.addEventListener('DOMContentLoaded', () => {
-    const empreendimentosListDiv = document.getElementById('empreendimentos-list');
+document.addEventListener('DOMContentLoaded', () => {
+    const empreendimentosGrid = document.getElementById('empreendimentos-grid');
 
     const empreendimentosData = [
         {
-            name: 'Nome do Projeto 1',
-            description: 'Uma breve descrição sobre este empreendimento. Fale sobre os objetivos, o que ele oferece e o público-alvo. Destaque os principais benefícios.',
-            image: './img/Empreendimentos/projeto1.jpg', // Adicione a imagem na pasta
-            link: '#', // Link para o site ou mais informações do projeto
+            groupTitle: 'Recanto dos Pássaros - Recanto das Emas/DF',
+            cards: [
+                {
+                    name: 'Recanto dos Passaros',
+                    description: 'Apartamentos de estúdio de 27,79m².',
+                    image: 'img/empreendimentos/passaros.png',
+                    link: 'contatos.html',
+                }
+            ]
         },
         {
-            name: 'Nome do Projeto 2',
-            description: 'Este projeto foca em soluções inovadoras para o mercado X. Explique como ele se diferencia e o valor que ele traz para os usuários.',
-            image: './img/Empreendimentos/projeto2.jpg',
-            link: '#',
+            groupTitle: 'Total Ville Ikeda - Ceilândia/DF',
+            cards: [
+                {
+                    name: 'Total Ville Ikeda',
+                    description: 'Apartamentos de 2 e 3 quartos com lazer de clube.',
+                    image: 'img/empreendimentos/Ikeda.jpg',
+                    link: 'contatos.html',
+                }
+            ]
         },
+        /*{
+            groupTitle: 'Total Ville - Santa Maria/DF',
+            cards: [
+                {
+                    name: 'Total Ville Conviver',
+                    description: 'Apartamentos de 2 e 3 quartos com suíte.',
+                    image: 'paginas do empreendimento/img/conviver.jpg',
+                    link: '#',
+                }
+            ]
+        },*/
         {
-            name: 'Nome do Projeto 3',
-            description: 'Mais um dos nossos projetos em desenvolvimento. Detalhe o estágio atual do projeto e o que a sua comunidade pode esperar dele.',
-            image: './img/Empreendimentos/Empreendimento.png',
-            link: '#',
-        },
-        // Adicione mais projetos aqui com a mesma estrutura
+            groupTitle: 'Águas Claras/DF',
+            cards: [
+                {
+                    name: 'Reserva Parque Clube',
+                    description: 'Apartamentos de 2 e 3 quartos (63m² e 81m²).',
+                    image: 'img/empreendimentos/reserva.jpg',
+                    link: 'contatos.html',
+                },
+                {
+                    name: 'Lumi Tower Residence',
+                    description: 'Apartamentos de 2 e 3 quartos com suíte(59.86m² até 72.06m²).',
+                    image: 'img/empreendimentos/Lumi.png',
+                    link: 'contatos.html',
+                }
+            ]
+        }
     ];
 
-    function createEmpreendimentoCard(empreendimento) {
-        const empreendimentoCard = document.createElement('div');
-        empreendimentoCard.classList.add('empreendimento-card');
-
-        empreendimentoCard.innerHTML = `
-            <img src="${empreendimento.image}" alt="${empreendimento.name}">
-            <div class="empreendimento-info">
-                <h3>${empreendimento.name}</h3>
-                <p>${empreendimento.description}</p>
-                <a href="${empreendimento.link}" target="_blank" rel="noopener noreferrer" class="ver-projeto-btn">Ver Projeto</a>
+    function createEmpreendimentoCard(card) {
+        const cardElement = document.createElement('a');
+        cardElement.classList.add('empreendimento-card');
+        cardElement.href = card.link;
+        
+        cardElement.innerHTML = `
+            <img src="${card.image}" alt="${card.name}">
+            <div class="card-content">
+                <h3>${card.name}</h3>
+                <p>${card.description}</p>
             </div>
         `;
-        return empreendimentoCard;
+        return cardElement;
     }
 
-    function displayEmpreendimentos(empreendimentosToDisplay) {
-        empreendimentosListDiv.innerHTML = '';
-        if (empreendimentosToDisplay.length === 0) {
-            empreendimentosListDiv.innerHTML = '<p class="no-results">Nenhum empreendimento encontrado no momento.</p>';
-            return;
-        }
-        empreendimentosToDisplay.forEach(empreendimento => {
-            empreendimentosListDiv.appendChild(createEmpreendimentoCard(empreendimento));
+    empreendimentosData.forEach(group => {
+        const cardGroup = document.createElement('div');
+        cardGroup.classList.add('card-group');
+
+        const groupTitle = document.createElement('h2');
+        groupTitle.classList.add('group-title');
+        groupTitle.textContent = group.groupTitle;
+
+        const cardsWrapper = document.createElement('div');
+        cardsWrapper.classList.add('cards-wrapper');
+
+        group.cards.forEach(card => {
+            cardsWrapper.appendChild(createEmpreendimentoCard(card));
         });
-    }
 
-    // Exibe todos os empreendimentos ao carregar a página
-    displayEmpreendimentos(empreendimentosData);
-});*/
+        cardGroup.appendChild(groupTitle);
+        cardGroup.appendChild(cardsWrapper);
+
+        empreendimentosGrid.appendChild(cardGroup);
+    });
+});
