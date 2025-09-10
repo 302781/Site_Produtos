@@ -1,21 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     const contactListDiv = document.getElementById('contact-list');
+    const contactForm = document.getElementById('contact-form');
 
-    // Substitua os links com suas informações
+    const whatsappNumber = '5561984036278';
+
     const contactsData = [
         {
             name: 'Fale Conosco no WhatsApp',
             iconClass: 'fa-brands fa-whatsapp',
-            link: 'https://wa.me/(61)98403-6278',
+            link: 'https://wa.me/${whatsappNumber}',
             className: 'whatsapp-btn'
         },
         {
-            name: 'Siga no Instagram',
-            iconClass: 'fa-brands fa-instagram',
-            link: 'https://www.instagram.com/shoppingshopee41',
-            className: 'instagram-btn'
+           name: 'Curta no Facebook',
+            iconClass: 'fa-brands fa-facebook',
+            link: 'https://www.facebook.com/share/16CwwCxbbi/',
+            className: 'facebook-btn'
         },
-          {
+        {
             name: 'Siga no Instagram',
             iconClass: 'fa-brands fa-instagram',
             link: 'https://www.instagram.com/mariavi7741',
@@ -30,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contactButton.href = contact.link;
         contactButton.target = '_blank';
         contactButton.rel = 'noopener noreferrer';
-        
+
         contactButton.innerHTML = `
             <i class="${contact.iconClass}"></i>
             <span>${contact.name}</span>
@@ -41,4 +43,25 @@ document.addEventListener('DOMContentLoaded', () => {
     contactsData.forEach(contact => {
         contactListDiv.appendChild(createContactButton(contact));
     });
+
+contactForm.addEventListener('submit', (event) => {
+        event.preventDefault(); 
+
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+
+
+     const whatsappMessage = `Olá! Gostaria de falar sobre os empreendimentos.
+        
+Nome: ${name}
+Telefone: ${phone}
+Mensagem: ${message}`;
+
+const encodedMessage = encodeURIComponent(whatsappMessage);
+
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+window.open(whatsappLink, '_blank');
+});
 });
