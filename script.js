@@ -124,14 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
             shopeeLink: 'https://s.shopee.com.br/2qKRMTVRBJ',
             id: 'CCF-MLG-AWN',
         },
-        /*{
-            name: 'Mini Impressora Portátil',
+        {
+            name: 'Mini Impressora Portátil', 
             description: 'Imprima fotos e anotações direto do seu bolso via Bluetooth.',
-            price: 'R$ 102,96 - R$ 113,95',
-            image: './img/Shoppe/Mini_Impressora.png',
-            shopeeLink: 'https://s.shopee.com.br/10aBAnohZ',
-            id: 'ABN-VFR-BBV',
-        },*/
+            price: 'R$ 49,99',
+            image: './img/Shoppe/impressora.jpg',
+            shopeeLink: 'https://s.shopee.com.br/2LOscQCYQx',
+            id: 'ALY-QQD-DZM',
+        },
         {
             name: 'Suporte p/ Celular de Moto e Bike',
             description: 'Segurança e resistência para seu celular no guidão.',
@@ -171,6 +171,14 @@ document.addEventListener('DOMContentLoaded', () => {
             image: './img/Shoppe/luminaria meia lua.jpg',
             shopeeLink: 'https://s.shopee.com.br/8Uz8IGUmwT',
             id: 'BUD-RHQ-LBF',
+        },
+        {
+            name: 'suporte base para Notebook',
+            description: 'Dê uma olhada em suporte base para Notebook com cooler e led cor preto.',
+            price: 'R$ 20,00',
+            image: './img/Shoppe/suporte_cooler.jpg',
+            shopeeLink: 'https://s.shopee.com.br/7V6ymqVnfK',
+            id: 'ADZ-VHC-YGR',
         },
         {
             name: 'Suporte para Câmeras e Action Cam',
@@ -252,22 +260,6 @@ document.addEventListener('DOMContentLoaded', () => {
             shopeeLink: 'https://s.shopee.com.br/LdQY3PDyo',
             id: 'AHQ-XGQ-RJC',
         },
-        /*{
-            name: 'Suporte p/ Notebook Dobrável',
-            description: 'Base ergonômica e dobrável para o seu laptop.',
-            price: 'R$ 19,95',
-            image: './img/Shoppe/Suporte_Notebook.png',
-            shopeeLink: 'https://s.shopee.com.br/9fB5f3BsiX',
-            id: 'BEP-UDP-DPC',
-        },
-        {
-            name: 'Fone Bluetooth Colorido',
-            description: 'Música sem fios, estilo e bateria de longa duração.',
-            price: 'R$ 28,00',
-            image: './img/Shoppe/Fone_Bluetooth.png',
-            shopeeLink: 'https://s.shopee.com.br/8zvOrgzVC6',
-            id: 'BYM-PZZ-VJG',
-        },*/
         {
             name: 'Webcam Full HD 1080p',
             description: 'Videochamadas e lives em alta definição. Microfone integrado.',
