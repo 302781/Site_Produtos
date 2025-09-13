@@ -84,14 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
             shopeeLink: 'https://s.shopee.com.br/5pxWEDaYGq',
             id: 'BUW-VYG-PYJ',
         },
-        /*{
-            name: 'Desumidificador de Ar',
-            description: 'Combate mofo e odores. Ar mais puro.',
-            price: 'R$ 180,00',
-            image: './img/Shoppe/Desumidificador.png',
-            shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_DESUMIDIFICADOR',
-            id: 'DES-UMID-001',
-        },*/
+        {
+            name: 'Camera Digital Portatil',
+            description: 'Dê uma olhada em Câmera Digital Portátil, Câmera para Estudantes, Câmera de Bolso, 180 °   Câmera de Tela Flip para Estudantes, Câmera Di.',
+            price: 'R$ 198,92',
+            image: './img/Shoppe/camera_digital.jpg',
+            shopeeLink: 'https://s.shopee.com.br/8pcMXoeBmy',
+            id: 'BSZ-PFU-KUY',
+        },
         {
             name: 'Esponjas Inox Limpeza',
             description: 'Dê uma olhada em Esponjas Inox Limpeza Pesada Aço Inox Grelhas Ferros Com 12 .',
