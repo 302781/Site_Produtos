@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             shopeeLink: 'https://s.shopee.com.br/5pxWEDaYGq',
             id: 'BUW-VYG-PYJ',
         },
-        {
+        /*{
             name: 'Desumidificador de Ar',
             description: 'Combate mofo e odores. Ar mais puro.',
             price: 'R$ 180,00',
@@ -107,6 +107,14 @@ document.addEventListener('DOMContentLoaded', () => {
             image: './img/Shoppe/escova eletrica.jpg',
             shopeeLink: 'https://s.shopee.com.br/EXEMPLO_LINK_ESCOVA_ELET',
             id: 'ESC-ELET-LIMP',
+        },*/
+        {
+            name: 'Espremedor Smeg',
+            description: 'Dê uma olhada em Espremedor Smeg, Anni 50, Creme, 220V - CJF11CRBR.',
+            price: 'R$ 3.038,90',
+            image: './img/Shoppe/espremedor.jpg',
+            shopeeLink: 'https://s.shopee.com.br/AA7k1lqiHK',
+            id: 'ANX-HNG-LQM',
         },
         {
             name: 'Máquina de Café Expresso Portátil',
@@ -131,6 +139,14 @@ document.addEventListener('DOMContentLoaded', () => {
             image: './img/Shoppe/impressora.jpg',
             shopeeLink: 'https://s.shopee.com.br/2LOscQCYQx',
             id: 'ALY-QQD-DZM',
+        },
+        {
+            name: 'Smeg-Moedor de Cafe', 
+            description: 'Dê uma olhada em Moedor de café Smeg, Anni 50, Branco, 220V - CGF11WHBR.',
+            price: 'R$ 1389,90',
+            image: './img/Shoppe/moedor.jpg',
+            shopeeLink: 'https://s.shopee.com.br/5L2UIBcjmE',
+            id: 'CJV-WTX-RQV',
         },
         {
             name: 'Suporte p/ Celular de Moto e Bike',
