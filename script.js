@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Escova Elétrica para Limpeza',
             description: 'Dê uma olhada em Escova De Limpeza Elétrica Giratória, Escova De Limpeza Elétrica Com 3 Cabeças De Escova, Escova De Limpeza De Chuveiro Para Limpeza De Banheiro, Janela, Cozinha Para Hotel/comercial.',
             price: 'R$ 53,03',
-            image: './img/Shoppe/esponja eletrica.jpg',
+            image: './img/Shoppe/esponja eletrica .jpg',
             shopeeLink: 'https://s.shopee.com.br/5L1FdlvXSy',
             id: 'BFC-TQZ-EWX',
         },
