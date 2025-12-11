@@ -449,8 +449,8 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'Poderoso e silencioso. Máxima ventilação.',
             price: 'R$ 772,65',
             image: './img/Shoppe/ventilador.jpg',
-            shopeeLink: 'https://s.shopee.com.br/4Aq48tGxTY',
-            id: 'BRM-ANV-LYV',
+            shopeeLink: 'https://s.shopee.com.br/8AOxb16nga',
+            id: 'APD-HUB-MRF',
         },
         {
             name: 'Fita de LED 5m Colorida',
